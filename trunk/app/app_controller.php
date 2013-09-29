@@ -49,16 +49,11 @@ class AppController extends Controller {
 	}
 */
 
-
 	function checkIfBelongsToArea($id){
 		if($this->Session->read("User.id")!=$id){
 			$this->flash('This Page not exist...', '/');
 		}
 	}
-
-
-
-
 
 }
 
