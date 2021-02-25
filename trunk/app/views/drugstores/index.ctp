@@ -5,21 +5,18 @@
 //print_r($arTmpCategs);
 ?>
 
-
-
-
 <div id="recipesMedic">
-	<span> Farmacii din Judetul Timis in contract cu Casa de Asigurari. </span><BR><BR>
+    <span> Farmacii din Judetul Timis in contract cu Casa de Asigurari. </span><BR><BR>
 
-	<?php 
-	foreach ($arTmpDrog as $arTmpD): 
-		echo $this->renderElement("drog", $arTmpD); 
-	endforeach; 
-	?>
+   <?php
+   foreach ($arTmpDrog as $arTmpD):
+	  echo $this->renderElement("drog", $arTmpD);
+   endforeach;
+   ?>
 
 </div>
 
-<? 
+<?
 echo $this->renderElement('pagination', $paging);
 ?> 
 

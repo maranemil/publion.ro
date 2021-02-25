@@ -1,54 +1,48 @@
 <?php
 /**
  * Controller Companies
- *
- * @author		Maran Emil | Maran Project | maran_emil@yahoo.com
- * @copyright	Copyright 2009, Maran Project.
- * @link		http://maran.pamil-visions.com 
- * @version		1.0
- * @license		http://www.opensource.org/licenses/mit-license.php The MIT License
+ * @author         Maran Emil | Maran Project | maran_emil@yahoo.com
+ * @copyright      Copyright 2009, Maran Project.
+ * @link           http://maran.pamil-visions.com
+ * @version        1.0
+ * @license        http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 
-class CategoriesController extends AppController
-{
-	/**
-	 * No....
-	 *
-	 * @var string
-	 */
+class CategoriesController extends AppController {
+   /**
+	* No....
+	* @var string
+	*/
 
-	var $name = "Category";
-	
-	/**
-	 * Helpers 
-	 *
-	 * @var array
-	 */
+   var $name = "Category";
 
-	var $uses = array('Category','User','Subcategory');
-	var $helpers = array('Html', 'Javascript', 'Session','Head','Javascript', 'Ajax','Form'); 
+   /**
+	* Helpers
+	* @var array
+	*/
 
-	public function index(){
-	}
+   var $uses    = array('Category', 'User', 'Subcategory');
+   var $helpers = array('Html', 'Javascript', 'Session', 'Head', 'Javascript', 'Ajax', 'Form');
 
+   /**
+	*
+	*/
+   public function index() {
+   }
 
-/*
-	public function list_latest($limit = 5)	
-	{
-		if ( isset($this->params['requested']) AND $this->params['requested'] )
-		{
-			return 	$this->Company->find('all', array('order' => 'Company.id DESC', 'limit' => $limit));
-			}
-		else
-		{
-			return FALSE;
-		}
-	}
-*/
+   /*
+	   public function list_latest($limit = 5)
+	   {
+		   if ( isset($this->params['requested']) AND $this->params['requested'] )
+		   {
+			   return 	$this->Company->find('all', array('order' => 'Company.id DESC', 'limit' => $limit));
+			   }
+		   else
+		   {
+			   return FALSE;
+		   }
+	   }
+   */
 
+}
 
-
-
-	}
-
-?>

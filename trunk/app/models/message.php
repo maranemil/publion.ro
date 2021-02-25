@@ -1,22 +1,19 @@
 <?php
 
-class Message extends AppModel
-{
-	/**
-	 * Nome del modello.
-	 *
-	 * @var string
-	 */
-	var $name = 'Message';
+class Message extends AppModel {
+   /**
+	* Nome del modello.
+	* @var string
+	*/
+   var $name = 'Message';
 
-	/**
-	 * Relazione uno a molti.
-	 *
-	 * @var mixed
-	 */
+   /**
+	* Relazione uno a molti.
+	* @var mixed
+	*/
 
-	var $belongsTo = 'User';
+   var $belongsTo = 'User';
 
 }
 
-?>
+

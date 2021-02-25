@@ -3,7 +3,7 @@ publion.ro
 
 Open source code from Classifieds Portal writed in Cakephp
 
-Classifieds Portal writed in Cakephp (2008)
+Classifieds Portal writed in Cakephp (2003-2008)
 
 Contains:
 

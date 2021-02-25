@@ -2,19 +2,14 @@
 /* SVN FILE: $Id: routes.php 7945 2008-12-19 02:16:01Z gwoo $ */
 /**
  * Short description for file.
- *
  * In this file, you set up routes to your controllers and their actions.
  * Routes are very important mechanism that allows you to freely connect
  * different urls to chosen controllers and their actions (functions).
- *
  * PHP versions 4 and 5
- *
  * CakePHP(tm) :  Rapid Development Framework (http://www.cakephp.org)
  * Copyright 2005-2008, Cake Software Foundation, Inc. (http://www.cakefoundation.org)
- *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
- *
  * @filesource
  * @copyright     Copyright 2005-2008, Cake Software Foundation, Inc. (http://www.cakefoundation.org)
  * @link          http://www.cakefoundation.org/projects/info/cakephp CakePHP(tm) Project
@@ -32,15 +27,15 @@
  * to use (in this case, /app/views/pages/home.ctp)...
  */
 
-	Router::connect('/', array('controller' => 'articles', 'action' => 'index'));
+Router::connect('/', array('controller' => 'articles', 'action' => 'index'));
 
-	//Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
-	//Router::connect('http://localhost/work/publion/', array('controller' => 'pages', 'action' => 'display', 'home'));
+//Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
+//Router::connect('http://localhost/work/publion/', array('controller' => 'pages', 'action' => 'display', 'home'));
 
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
-	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
-	//Router::connect('http://localhost/work/publion/pages/*', array('controller' => 'pages', 'action' => 'display'));
-	//Router::connect('http://localhost/work/publion/articles/*', array('controller' => 'articles', 'action' => 'display'));
+Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
+//Router::connect('http://localhost/work/publion/pages/*', array('controller' => 'pages', 'action' => 'display'));
+//Router::connect('http://localhost/work/publion/articles/*', array('controller' => 'articles', 'action' => 'display'));
 ?>

@@ -5,14 +5,14 @@
 // &listtype=1
 
 $listtype = $this->params['url']['listtype'];
-if(!$listtype) $listtype = 2;
-if($listtype==1) $renderElemSel = "article_list";
-else if($listtype==2) $renderElemSel = "article_thumb";
-else if($listtype==3) $renderElemSel = "article";
+if (!$listtype) $listtype = 2;
+if ($listtype == 1) $renderElemSel = "article_list";
+else if ($listtype == 2) $renderElemSel = "article_thumb";
+else if ($listtype == 3) $renderElemSel = "article";
 
-$arrPromo = array("70","2920","70","70");
-$usrPromo = $arrPromo[rand(0,count($arrPromo)-1)];
-$artPromo = $this->requestAction('articles/getlastarticlebyuser/'.$usrPromo);
+$arrPromo = array("70", "2920", "70", "70");
+$usrPromo = $arrPromo[rand(0, count($arrPromo) - 1)];
+$artPromo = $this->requestAction('articles/getlastarticlebyuser/' . $usrPromo);
 //print_r($artPromo);
 
 /*
@@ -23,38 +23,36 @@ Array ( [0] => Array ( [Article] => Array ( [id] => 101360 [category_id] => 4 [s
 // /img/upload/20100206/20100206054918.jpg
 // http://publion.ro/img/upload/201002/20100206054918.jpg
 
-foreach($this->requestAction('articles/getlastarticlebyuser/'.$usrPromo) as $ArtPubPro){
-?>
-		<!-- <div class="item_list_thumb" style="">
+foreach ($this->requestAction('articles/getlastarticlebyuser/' . $usrPromo) as $ArtPubPro) {
+   ?>
+    <!-- <div class="item_list_thumb" style="">
 			<div class="item_content_imgbox">
-				<a href='<?php echo $this->webroot; ?>articles/view/<?=$ArtPubPro['Article']['id']?>'>
-					<img src='<?php echo $this->webroot; ?>img/upload/<?=substr(str_replace("-","",$ArtPubPro['Article']['date']),0,6)?>/<?=$ArtPubPro['Article']['image']?>' width=200 class='item_img' border=0>
+				<a href='<?php echo $this->webroot; ?>articles/view/<?= $ArtPubPro['Article']['id'] ?>'>
+					<img src='<?php echo $this->webroot; ?>img/upload/<?= substr(str_replace("-", "", $ArtPubPro['Article']['date']), 0, 6) ?>/<?= $ArtPubPro['Article']['image'] ?>' width=200 class='item_img' border=0>
 				</a>
 			</div>
 			<div class="item_content">
-				<a href='/articles/view/<?=$ArtPubPro['Article']['id']?>' >
-					<?=substr(ucfirst($ArtPubPro['Article']['title']),0,35)?>
+				<a href='/articles/view/<?= $ArtPubPro['Article']['id'] ?>' >
+					<?= substr(ucfirst($ArtPubPro['Article']['title']), 0, 35) ?>
 				</a>...<br>
 				<p>
-					Adaugat  la <?php echo sprintf(__(" la %s", TRUE),AppController::Db2StrDate($ArtPubPro['Article']['date'])); ?>
+					Adaugat  la <?php echo sprintf(__(" la %s", true), AppController::Db2StrDate($ArtPubPro['Article']['date'])); ?>
 				</p>
 
 			</div>
 			<div class="clearer"></div>
 		</div> -->
 
-
-
-<?
-	}
+   <?
+}
 ?>
 
-	
+
 <?php foreach ($arTmpArt as $sTmpArt): ?>
-	<?php echo $this->renderElement($renderElemSel, $sTmpArt); ?>
+   <?php echo $this->renderElement($renderElemSel, $sTmpArt); ?>
 <?php endforeach; ?>
 
-<? echo $this->renderElement('pagination', $paging);?> 
-<? echo $this->renderElement('listtype','');?>
+<? echo $this->renderElement('pagination', $paging); ?>
+<? echo $this->renderElement('listtype', ''); ?>
 
 

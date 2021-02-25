@@ -1,4 +1,5 @@
 <?php
+
 /* comment.php, Provides Database Functionality for the table "users"
     Copyright (C) 2007  Christoph Hochstrasser
 
@@ -14,14 +15,13 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
+
 class Judet extends AppModel {
 
-	var $name = 'Judet';
+   var $name = 'Judet';
 
-	
 }
 
 // http://justkez.com/understanding-cakephp-sessions/
 // http://api.cakephp.org/view_source/session-helper/
 // http://blog.dievolution.net/cakephp/kurztipp-sessions-in-cakephp/
-?>

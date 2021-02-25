@@ -1,67 +1,58 @@
 <?php
 /**
  * Controller Companies
- *
- * @author		Maran Emil | Maran Project | maran_emil@yahoo.com
- * @copyright	Copyright 2009, Maran Project.
- * @link		http://maran.pamil-visions.com 
- * @version		1.0
- * @license		http://www.opensource.org/licenses/mit-license.php The MIT License
+ * @author         Maran Emil | Maran Project | maran_emil@yahoo.com
+ * @copyright      Copyright 2009, Maran Project.
+ * @link           http://maran.pamil-visions.com
+ * @version        1.0
+ * @license        http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 
+class GetnewsController extends AppController {
+   /**
+	* No....
+	* @var string
+	*/
 
-class GetnewsController extends AppController
-{
-	/**
-	 * No....
-	 *
-	 * @var string
-	 */
+   var $name = "Getnews";
 
-	var $name = "Getnews";
-	
-	/**
-	 * Helpers 
-	 *
-	 * @var array
-	 */
-	
-	var $uses = array('Getnew','User');
-	var $helpers = array('Html', 'Javascript', 'Session','Head','Javascript', 'Ajax','Form','Pagination'); 
-	var $components = array('Pagination','Upload'); 
-	
+   /**
+	* Helpers
+	* @var array
+	*/
 
-	public function index()
-	{
-		$criteria = null;
+   var $uses       = array('Getnew', 'User');
+   var $helpers    = array('Html', 'Javascript', 'Session', 'Head', 'Javascript', 'Ajax', 'Form', 'Pagination');
+   var $components = array('Pagination', 'Upload');
 
-		$paging['sortBy']="date";
-		$paging['direction']='DESC';
-		$paging['show']='6';
-		
-		list($order,$limit,$page) = $this->Pagination->init($criteria,$paging);
-		$arTmpArt = $this->Getnew->findAll($criteria,"", $order, $limit, $page);
+   public function index() {
+	  $criteria = null;
 
-		//print "<pre>"; print_r($arTmpArt); print "</pre>"; 
-	
-		if($arTmpArt){
-			//$this->set(compact('comments','currentDateTime'));
-			$this->set("arTmpArt", $arTmpArt);
-			$this->pageTitle = 'Publion - Anunturi';
-		}else{
-			$this->pageTitle = ' - No Articles';
-			$this->set('message',"No Article were found,...");
-			$this->render(null,null,'views/errors/cc_die');
-		} 
+	  $paging['sortBy']    = "date";
+	  $paging['direction'] = 'DESC';
+	  $paging['show']      = '6';
 
-		$arTmpUsr = $this->Session->read("User");
-		$this->set("arTmpUsr", $arTmpUsr);
+	  list($order, $limit, $page) = $this->Pagination->init($criteria, $paging);
+	  $arTmpArt = $this->Getnew->findAll($criteria, "", $order, $limit, $page);
 
-	//	print_r($this->Session ->read("User"));
-	}
-	
+	  //print "<pre>"; print_r($arTmpArt); print "</pre>";
 
+	  if ($arTmpArt) {
+		 //$this->set(compact('comments','currentDateTime'));
+		 $this->set("arTmpArt", $arTmpArt);
+		 $this->pageTitle = 'Publion - Anunturi';
+	  }
+	  else {
+		 $this->pageTitle = ' - No Articles';
+		 $this->set('message', "No Article were found,...");
+		 $this->render(null, null, 'views/errors/cc_die');
+	  }
+
+	  $arTmpUsr = $this->Session->read("User");
+	  $this->set("arTmpUsr", $arTmpUsr);
+	  //	print_r($this->Session ->read("User"));
+   }
 
 }
 
-?>
+

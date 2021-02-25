@@ -1,11 +1,35 @@
-#searchBox { height: 100px }
-form#searchform input#searchq { margin-top: 20px; }
-#submitpub { width: 40px; height: 33px}
+#searchBox {
+    height: 100px
+}
 
-#header_bottom { height: 173px }
+form#searchform input#searchq {
+    margin-top: 20px;
+}
 
-#header_bottom ul li { font: normal 11px arial; }
-#header_bottom a.li_title { font: normal 12px Calibri,arial; }
+#submitpub {
+    width: 40px;
+    height: 33px
+}
 
-#login_head a { width: 180px; height: 53px; padding:  7px; background:#ff0000; }
-#navRtBox3 { filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F84B00', endColorstr='#FF9100'); /* for IE */ /*#6BCFFF*/ }
+#header_bottom {
+    height: 173px
+}
+
+#header_bottom ul li {
+    font: normal 11px arial;
+}
+
+#header_bottom a.li_title {
+    font: normal 12px Calibri, arial;
+}
+
+#login_head a {
+    width: 180px;
+    height: 53px;
+    padding: 7px;
+    background: #ff0000;
+}
+
+#navRtBox3 {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F84B00', endColorstr='#FF9100'); /* for IE */ /*#6BCFFF*/
+}

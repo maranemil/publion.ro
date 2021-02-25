@@ -3,13 +3,12 @@
 #$html->addCrumb(__("Home", TRUE), "/");
 ?>
 
+<?php
 
-<?php 
-
-foreach ($arTmpArt as $sTmpArt): 
-	echo $this->renderElement("car", $sTmpArt); 
-endforeach; 
+foreach ($arTmpArt as $sTmpArt):
+   echo $this->renderElement("car", $sTmpArt);
+endforeach;
 
 ?>
 
-<? echo $this->renderElement('pagination', $paging);?> 
+<?php echo $this->renderElement('pagination', $paging); ?>

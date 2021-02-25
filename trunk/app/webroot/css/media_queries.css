@@ -9,126 +9,358 @@
 ----------------------------------------------- */
 /*@media only screen and (min-width: 480px) and (max-width: 767px) {*/
 @media screen and (min-width: 60px) and ( max-width: 480px ) {
-	
-	/*body { background: green; }*/
 
+    /*body { background: green; }*/
+    #page {
+        width: 84% !important;
+    }
 
-	#page { width: 84% !important; }
+    #header {
+        width: 95% !important;
+    }
 
-	#header { width: 95% !important; }
-	#header_bottom { width: 100% !important;  height: 2% }
-	#header_middle { width: 100% !important; }
+    #header_bottom {
+        width: 100% !important;
+        height: 2%
+    }
 
-	#header_bottom ul { display: none }
-	#header_bottom ul li { font: 10px Calibri,arial !important; }
-	#header_bottom .li_title { font: bold 11px Calibri,arial; }
+    #header_middle {
+        width: 100% !important;
+    }
 
-	#searchBox { display: none; width: 95% !important;  }
-	form#searchform input#searchq { width: 95px !important;}
+    #header_bottom ul {
+        display: none
+    }
 
-	#cont {  width: 95% !important;   }
-	.item_list_thumb {  width: 100% !important; height: 22% !important;   }
-	.item_content_imgbox { display: none }
+    #header_bottom ul li {
+        font: 10px Calibri, arial !important;
+    }
 
-	#cont .item_content { width: 100% !important; }
-	#cont .item_content a { font: bold 18px Trebuchet MS;  }
+    #header_bottom .li_title {
+        font: bold 11px Calibri, arial;
+    }
 
-	#contentBox { width: 90% }
-	#articleCnt { width: 80% }
-	#articleTitle { width: 80% }
+    #searchBox {
+        display: none;
+        width: 95% !important;
+    }
 
-	#pagination { width: 100% !important; font: bold 18px Calibri; margin-top: 10px; height: 22% !important; }
-	#pagination a { padding: 3px 9px;   }
-	#pagination_listtype { display: none }
+    form#searchform input#searchq {
+        width: 95px !important;
+    }
 
-	#login_head  { display: none; width: 190px !important; margin-left: 70px;  margin-top: 15px; height: 130px !important; /*border: 1px solid red*/}
-	#login_head a:nth-child(1) {font: bold 11px Calibri; margin-left: 0px; margin-top: 0px !important; padding: 5px 19px;  position: relative; }
-	#login_head a:nth-child(2) {font: bold 11px Calibri; margin-left: 100px; margin-top: 0px !important; padding: 5px 19px;  position: relative; }
-	#login_head a:nth-child(3) {font: bold 11px Calibri; margin-left: 200px; margin-top: 0px !important; padding: 5px 15px;  position: relative; }
+    #cont {
+        width: 95% !important;
+    }
 
-	a#uservoice-feedback-tab { display: none }
+    .item_list_thumb {
+        width: 100% !important;
+        height: 22% !important;
+    }
 
-	#navRtBox1 { display: none }
-	#navRtBox2 { display: none }
-	#navRtBox3 { display: none }
-	#navRtBox4 { display: none }
-	#navRtBox5 { display: none }
+    .item_content_imgbox {
+        display: none
+    }
 
-	#footer  {  width: 100% !important; }
-	.navDefaultRtBox { display: none }
+    #cont .item_content {
+        width: 100% !important;
+    }
+
+    #cont .item_content a {
+        font: bold 18px Trebuchet MS;
+    }
+
+    #contentBox {
+        width: 90%
+    }
+
+    #articleCnt {
+        width: 80%
+    }
+
+    #articleTitle {
+        width: 80%
+    }
+
+    #pagination {
+        width: 100% !important;
+        font: bold 18px Calibri;
+        margin-top: 10px;
+        height: 22% !important;
+    }
+
+    #pagination a {
+        padding: 3px 9px;
+    }
+
+    #pagination_listtype {
+        display: none
+    }
+
+    #login_head {
+        display: none;
+        width: 190px !important;
+        margin-left: 70px;
+        margin-top: 15px;
+        height: 130px !important; /*border: 1px solid red*/
+    }
+
+    #login_head a:nth-child(1) {
+        font: bold 11px Calibri;
+        margin-left: 0;
+        margin-top: 0 !important;
+        padding: 5px 19px;
+        position: relative;
+    }
+
+    #login_head a:nth-child(2) {
+        font: bold 11px Calibri;
+        margin-left: 100px;
+        margin-top: 0 !important;
+        padding: 5px 19px;
+        position: relative;
+    }
+
+    #login_head a:nth-child(3) {
+        font: bold 11px Calibri;
+        margin-left: 200px;
+        margin-top: 0 !important;
+        padding: 5px 15px;
+        position: relative;
+    }
+
+    a#uservoice-feedback-tab {
+        display: none
+    }
+
+    #navRtBox1 {
+        display: none
+    }
+
+    #navRtBox2 {
+        display: none
+    }
+
+    #navRtBox3 {
+        display: none
+    }
+
+    #navRtBox4 {
+        display: none
+    }
+
+    #navRtBox5 {
+        display: none
+    }
+
+    #footer {
+        width: 100% !important;
+    }
+
+    .navDefaultRtBox {
+        display: none
+    }
 }
 
 /* DESKTOP 800px
 ----------------------------------------------- */
-@media screen and ( min-width: 481px ) and ( max-width: 800px ){
-	
-	/*body { background: #000000; }*/
+@media screen and ( min-width: 481px ) and ( max-width: 800px ) {
 
-	#page { width: 760px !important; }
+    /*body { background: #000000; }*/
+    #page {
+        width: 760px !important;
+    }
 
-	#header { width: 720px !important; }
-	#header_bottom { width: 720px !important; }
-	#header_middle { width: 720px !important; }
+    #header {
+        width: 720px !important;
+    }
 
-	#header_bottom ul li { font: 10px Calibri,arial !important; }
-	#header_bottom .li_title { font: bold 11px Calibri,arial; }
+    #header_bottom {
+        width: 720px !important;
+    }
 
-	#searchBox { width: 400px !important;  }
-	form#searchform input#searchq { width: 200px !important;}
+    #header_middle {
+        width: 720px !important;
+    }
 
-	#cont {  width: 395px !important;   }
-	.item_list_thumb {  width: 184px !important;   }
-	#pagination { width: 345px !important; font: bold 10px Calibri; margin-top: 10px;  }
-	#pagination a { padding: 2px 4px }
+    #header_bottom ul li {
+        font: 10px Calibri, arial !important;
+    }
+
+    #header_bottom .li_title {
+        font: bold 11px Calibri, arial;
+    }
+
+    #searchBox {
+        width: 400px !important;
+    }
+
+    form#searchform input#searchq {
+        width: 200px !important;
+    }
+
+    #cont {
+        width: 395px !important;
+    }
+
+    .item_list_thumb {
+        width: 184px !important;
+    }
+
+    #pagination {
+        width: 345px !important;
+        font: bold 10px Calibri;
+        margin-top: 10px;
+    }
+
+    #pagination a {
+        padding: 2px 4px
+    }
 
 
-	#login_head  { width: 190px !important; margin-left: 70px;  margin-top: 15px; height: 130px !important; /*border: 1px solid red*/}
-	#login_head a:nth-child(1) {font: bold 11px Calibri; margin-left: 0px; margin-top: 0px !important; padding: 5px 19px;  position: absolute; }
-	#login_head a:nth-child(2) {font: bold 11px Calibri; margin-left: 100px; margin-top: 0px !important; padding: 5px 19px;  position: absolute; }
-	#login_head a:nth-child(3) {font: bold 11px Calibri; margin-left: 200px; margin-top: 0px !important; padding: 5px 15px;  position: absolute; }
+    #login_head {
+        width: 190px !important;
+        margin-left: 70px;
+        margin-top: 15px;
+        height: 130px !important; /*border: 1px solid red*/
+    }
 
-	a#uservoice-feedback-tab { display: none }
+    #login_head a:nth-child(1) {
+        font: bold 11px Calibri;
+        margin-left: 0;
+        margin-top: 0 !important;
+        padding: 5px 19px;
+        position: absolute;
+    }
+
+    #login_head a:nth-child(2) {
+        font: bold 11px Calibri;
+        margin-left: 100px;
+        margin-top: 0 !important;
+        padding: 5px 19px;
+        position: absolute;
+    }
+
+    #login_head a:nth-child(3) {
+        font: bold 11px Calibri;
+        margin-left: 200px;
+        margin-top: 0 !important;
+        padding: 5px 15px;
+        position: absolute;
+    }
+
+    a#uservoice-feedback-tab {
+        display: none
+    }
 
 }
 
 /* DESKTOP 1024px
 ----------------------------------------------- */
-@media screen and ( min-width: 801px ) and ( max-width: 1176px ){
-	
-	/*body { background: #FF0000; }*/
+@media screen and ( min-width: 801px ) and ( max-width: 1176px ) {
 
-	#page { width: 940px !important; }
+    /*body { background: #FF0000; }*/
+    #page {
+        width: 940px !important;
+    }
 
-	#header { width: 920px !important; }
-	#header_bottom { width: 920px !important; }
-	#header_middle { width: 920px !important; }
+    #header {
+        width: 920px !important;
+    }
 
-	#searchBox { width: 600px !important;  }
-	form#searchform input#searchq { width: 400px !important;}
+    #header_bottom {
+        width: 920px !important;
+    }
 
-	#cont {  width: 595px !important;   }
-	.item_list_thumb {  width: 184px !important;   }
-	#pagination { width: 445px !important; font: bold 16px Calibri; margin-top: 10px;  }
-	#pagination a { padding: 3px 7px }
+    #header_middle {
+        width: 920px !important;
+    }
 
-	.registerBox { width: 575px }
-	#articleTitle { width: 180px; margin-bottom: 5px }
-	register_input input { width: 180px }
-	
-	.infoBox { width: 565px }
-	.myentries { width: 258px }
+    #searchBox {
+        width: 600px !important;
+    }
 
-	#login_head  { width: 190px !important; margin-left: 0px;  margin-top: 15px; height: 130px !important; /*border: 1px solid red*/}
-	#login_head a:nth-child(1) {font: bold 11px Calibri; margin-left: 20px; margin-top: 0px !important; padding: 10px 59px;  position: absolute; }
-	#login_head a:nth-child(2) {font: bold 11px Calibri; margin-left: 20px; margin-top: 40px !important; padding: 10px 59px;  position: absolute; }
-	#login_head a:nth-child(3) {font: bold 11px Calibri; margin-left: 20px; margin-top: 80px !important; padding: 10px 55px;  position: absolute; }
+    form#searchform input#searchq {
+        width: 400px !important;
+    }
 
-	a#uservoice-feedback-tab { display: none }
+    #cont {
+        width: 595px !important;
+    }
+
+    .item_list_thumb {
+        width: 184px !important;
+    }
+
+    #pagination {
+        width: 445px !important;
+        font: bold 16px Calibri;
+        margin-top: 10px;
+    }
+
+    #pagination a {
+        padding: 3px 7px
+    }
+
+    .registerBox {
+        width: 575px
+    }
+
+    #articleTitle {
+        width: 180px;
+        margin-bottom: 5px
+    }
+
+    /*input {
+       width: 180px
+   }*/
+    .infoBox {
+        width: 565px
+    }
+
+    .myentries {
+        width: 258px
+    }
+
+    #login_head {
+        width: 190px !important;
+        margin-left: 0;
+        margin-top: 15px;
+        height: 130px !important; /*border: 1px solid red*/
+    }
+
+    #login_head a:nth-child(1) {
+        font: bold 11px Calibri;
+        margin-left: 20px;
+        margin-top: 0 !important;
+        padding: 10px 59px;
+        position: absolute;
+    }
+
+    #login_head a:nth-child(2) {
+        font: bold 11px Calibri;
+        margin-left: 20px;
+        margin-top: 40px !important;
+        padding: 10px 59px;
+        position: absolute;
+    }
+
+    #login_head a:nth-child(3) {
+        font: bold 11px Calibri;
+        margin-left: 20px;
+        margin-top: 80px !important;
+        padding: 10px 55px;
+        position: absolute;
+    }
+
+    a#uservoice-feedback-tab {
+        display: none
+    }
 
 }
 
 /* DESKTOP 1176PX
 ----------------------------------------------- */
-@media screen and ( min-width: 1177px ){
-	/*body { background: #FFFF99; }*/
+@media screen and ( min-width: 1177px ) {
+    /*body { background: #FFFF99; }*/
 }
