@@ -4,11 +4,9 @@
 ?>
 
 <?php
-
 foreach ($arTmpArt as $sTmpArt):
-   echo $this->renderElement("getnew", $sTmpArt);
+    echo $this->renderElement("getnew", $sTmpArt);
 endforeach;
-
 ?>
 
-<? echo $this->renderElement('pagination', $paging); ?>
+<?php echo $this->renderElement('pagination', $paging); ?>

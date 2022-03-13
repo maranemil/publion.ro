@@ -1,4 +1,7 @@
-<?php
+<?php /** @noinspection PhpMultipleClassDeclarationsInspection */
+/** @noinspection AutoloadingIssuesInspection */
+/** @noinspection PhpUnused */
+
 /* users_controller.php, Provides Functions for User Authentification and Managment
     Copyright (C) 2007  Christoph Hochstrasser
 
@@ -15,49 +18,59 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
-class InfosController extends AppController {
+class InfosController extends AppController
+{
 
-   var $name = 'Infos';
-   #var $pageTitle = "Pages";
-   #var $layout = 'default';
-   var $uses    = array("Info");
-   var $helpers = array('Html', 'Javascript', 'Session', 'Head', 'Javascript', 'Ajax', 'Form', 'Pagination');
+    public $name = 'Infos';
+    #var $pageTitle = "Pages";
+    #var $layout = 'default';
+    public $uses    = array("Info");
+    public $helpers = array('Html', 'Javascript', 'Session', 'Head', 'Javascript', 'Ajax', 'Form', 'Pagination');
 
-   public function index() {
-	  $this->pageTitle = ' - Contact Us';
-   }
+    public function index()
+    {
+        $this->pageTitle = ' - Contact Us';
+    }
 
-   public function contact() {
-	  $this->pageTitle = ' - Contact Us';
-   }
+    public function contact()
+    {
+        $this->pageTitle = ' - Contact Us';
+    }
 
-   public function terms() {
-	  $this->pageTitle = ' - Termeni de utilizare';
-   }
+    public function terms()
+    {
+        $this->pageTitle = ' - Termeni de utilizare';
+    }
 
-   public function faq() {
-	  $this->pageTitle = ' - Contact Us';
-   }
+    public function faq()
+    {
+        $this->pageTitle = ' - Contact Us';
+    }
 
-   public function telefoaneutile() {
-	  $this->pageTitle = ' - Telefoane Utile ';
-   }
+    public function telefoaneutile()
+    {
+        $this->pageTitle = ' - Telefoane Utile ';
+    }
 
-   public function prefixeromania() {
-	  $this->pageTitle = ' - Telefoane Utile ';
-   }
+    public function prefixeromania()
+    {
+        $this->pageTitle = ' - Telefoane Utile ';
+    }
 
-   public function prefixetari() {
-	  $this->pageTitle = ' - Telefoane Utile ';
-   }
+    public function prefixetari()
+    {
+        $this->pageTitle = ' - Telefoane Utile ';
+    }
 
-   public function ambasade() {
-	  $this->pageTitle = ' - Telefoane Utile ';
-   }
+    public function ambasade()
+    {
+        $this->pageTitle = ' - Telefoane Utile ';
+    }
 
-   public function consulate() {
-	  $this->pageTitle = ' - Telefoane Utile ';
-   }
+    public function consulate()
+    {
+        $this->pageTitle = ' - Telefoane Utile ';
+    }
 
 }
 

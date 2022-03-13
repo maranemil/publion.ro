@@ -5,22 +5,20 @@ $html->addCrumb(__("Home", true), "/");
 
 <div id="userView" style="">
     <div class="userImg" style="">
-	   <? if ($user['User']['image']) { ?>
-           <img src="<?= $this->webroot ?>img/user/<?= $user['User']['image'] ?>" border=1>
-	   <? } else { ?>
-           <img src="<?= $this->webroot ?>img/user/usericon.jpg" border=1>
-	   <? } ?>
+        <?php if ($user['User']['image']) { ?>
+           <img src="<?= $this->webroot ?>img/user/<?= $user['User']['image'] ?>" alt="">
+        <?php } else { ?>
+           <img src="<?= $this->webroot ?>img/user/usericon.jpg" alt="">
+        <?php } ?>
     </div>
-
     <div class="userInfo" style="">
         <h1 style="">Profil <BR><?php echo $user['User']['name'] . " " . $user['User']['pastname']; ?></h1><BR>
-
         <table class="userData" style="">
             <tr>
                 <td>E-Mail:</td>
                 <td>
 				   <?php
-				   if ($user['User']['showhide'] == 1) {
+				   if ($user['User']['showhide'] === 1) {
 					  echo substr($user['User']['e-mail'], 0, 10) . "....";
 				   }
 				   else {
@@ -30,7 +28,7 @@ $html->addCrumb(__("Home", true), "/");
 				   ?>
                 </td>
             </tr>
-		   <? if (strstr($user['User']['e-mail'], "yahoo")) { ?>
+            <?php if (strpos($user['User']['e-mail'], "yahoo") !== false) { ?>
                <tr>
                    <td>YM contact:</td>
                    <td>
@@ -38,10 +36,11 @@ $html->addCrumb(__("Home", true), "/");
 					  $YmTmp = explode("@", $user['User']['e-mail']);
 					  $sYM   = $YmTmp[0];
 					  ?>
-                       <A HREF="ymsgr:sendim?<?= $sYM ?>"><?= $sYM ?></A> <img src="http://opi.yahoo.com/online/?u=<?= $sYM ?>&m=g&t=0">
+                       <A HREF="ymsgr:sendim?<?= $sYM ?>"><?= $sYM ?></A>
+                       <img src="http://opi.yahoo.com/online/?u=<?= $sYM ?>&m=g&t=0" alt="">
                    </td>
                </tr>
-		   <? } ?>
+            <?php } ?>
             <tr>
                 <td>Nickname:</td>
                 <td><?php echo $user['User']['nickname']; ?></td>
@@ -58,12 +57,12 @@ $html->addCrumb(__("Home", true), "/");
                     </A>
                 </td>
             </tr>
-		   <? if ($session->read("User.id") != $user['User']['id']) { ?>
+            <?php if ($session->read("User.id") !== $user['User']['id']) { ?>
                <tr>
                    <td>Adauga la Prieteni</td>
                    <td>
                        <A HREF="javascript:void(0)" onclick="AddToFriends(<?= $user['User']['id'] ?>)">
-                           <img src="<?= $this->webroot ?>img/addto20.gif" width="20" height="20" border="0">
+                           <img src="<?= $this->webroot ?>img/addto20.gif" width="20" height="20" alt="">
                        </A>
                    </td>
                </tr>
@@ -75,7 +74,7 @@ $html->addCrumb(__("Home", true), "/");
                        </A>
                    </td>
                </tr>
-		   <? } ?>
+            <?php } ?>
 
         </table>
     </div>

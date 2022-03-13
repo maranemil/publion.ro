@@ -1,18 +1,21 @@
-<?php
+<?php /** @noinspection PhpMultipleClassDeclarationsInspection */
 
-class Message extends AppModel {
-   /**
-	* Nome del modello.
-	* @var string
-	*/
-   var $name = 'Message';
+/** @noinspection AutoloadingIssuesInspection */
 
-   /**
-	* Relazione uno a molti.
-	* @var mixed
-	*/
+class Message extends AppModel
+{
+    /**
+     * Nome del modello.
+     * @var string
+     */
+    public $name = 'Message';
 
-   var $belongsTo = 'User';
+    /**
+     * Relazione uno a molti.
+     * @var mixed
+     */
+
+    public $belongsTo = 'User';
 
 }
 

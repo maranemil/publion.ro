@@ -4,7 +4,7 @@
 ?>
 
 <?php
-/*
+/**
 foreach ($arTmpArt as $sTmpArt): 
 	echo $this->renderElement("article", $sTmpArt); 
 endforeach; 
@@ -12,7 +12,7 @@ endforeach;
 ?>
 
 <?php
-/*
+/**
 foreach ($Category as $sCat): 
 	echo $sCat['name']); 
 endforeach; 

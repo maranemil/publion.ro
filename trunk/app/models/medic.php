@@ -1,4 +1,6 @@
-<?php
+<?php /** @noinspection PhpMultipleClassDeclarationsInspection */
+/** @noinspection AutoloadingIssuesInspection */
+/** @noinspection PhpUnused */
 
 /**
  * Modello delle Categorie.
@@ -9,19 +11,20 @@
  * @license        http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 
-class Medic extends AppModel {
-   /**
-	* Nome del modello.
-	* @var string
-	*/
-   var $name = 'Medic';
+class Medic extends AppModel
+{
+    /**
+     * Nome del modello.
+     * @var string
+     */
+    public $name = 'Medic';
 
-   /**
-	* Relazione uno a molti.
-	* @var mixed
-	*/
+    /**
+     * Relazione uno a molti.
+     * @var mixed
+     */
 
-   //var $belongsTo = 'User';
+    //var $belongsTo = 'User';
 
 }
 

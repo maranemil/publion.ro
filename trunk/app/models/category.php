@@ -1,4 +1,5 @@
-<?php
+<?php /** @noinspection PhpMultipleClassDeclarationsInspection */
+/** @noinspection AutoloadingIssuesInspection */
 
 /**
  * Modello delle Categorie.
@@ -14,7 +15,7 @@ class Category extends AppModel {
 	* Nome del modello.
 	* @var string
 	*/
-   var $name = 'Category';
+   public $name = 'Category';
 
    /**
 	* Relazione uno a molti.
@@ -23,7 +24,7 @@ class Category extends AppModel {
 
 // var $belongsTo = 'User';
 
-   var $hasMany = array('Articles'      =>
+   public $hasMany = array('Articles'      =>
 							array('className'  => 'Article',
 								  'foreignKey' => 'category_id',
 								  'conditions' => '',
@@ -31,7 +32,7 @@ class Category extends AppModel {
 								  'order'      => '',
 								  'dependent'  => ''
 							),
-						'Subcategories' =>
+                           'Subcategories' =>
 							array('className'  => 'Subcategory',
 								  'foreignKey' => 'category_id',
 								  'conditions' => '',

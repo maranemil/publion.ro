@@ -6,7 +6,7 @@
 <?php
 
 foreach ($arTmpArt as $sTmpArt):
-   echo $this->renderElement("car", $sTmpArt);
+    echo $this->renderElement("car", $sTmpArt);
 endforeach;
 
 ?>

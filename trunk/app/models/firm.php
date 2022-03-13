@@ -1,4 +1,6 @@
-<?php
+<?php /** @noinspection PhpMultipleClassDeclarationsInspection */
+/** @noinspection AutoloadingIssuesInspection */
+/** @noinspection PhpUnused */
 
 /**
  * Modello delle Categorie.
@@ -14,7 +16,7 @@ class Firm extends AppModel {
 	* Nome del modello.
 	* @var string
 	*/
-   var $name = 'Firm';
+   public $name = 'Firm';
 
    /**
 	* Relazione uno a molti.

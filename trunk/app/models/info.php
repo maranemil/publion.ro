@@ -1,8 +1,12 @@
-<?php
+<?php /** @noinspection PhpMultipleClassDeclarationsInspection */
+/** @noinspection AutoloadingIssuesInspection */
 
-class Info extends AppModel {
-   var $name     = 'Info';
-   var $useTable = false;
+/** @noinspection PhpUnused */
+
+class Info extends AppModel
+{
+    public $name     = 'Info';
+    public $useTable = false;
 }
 
 

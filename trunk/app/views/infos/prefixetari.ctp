@@ -13,11 +13,16 @@
                     <a href=#c><b><u>C</u></b></a>&nbsp;<a href=#d><b><u>D</u></b></a>
                     <a href=#e><b><u>E</u></b></a>&nbsp;<a href=#f><b><u>F</u></b></a>&nbsp;
                     <a href=#g><b><u>G</u></b></a>&nbsp;<a href=#h><b><u>H</u></b></a>
-                    <a href=#i><b><u>I</u></b></a>&nbsp;<a href=#j><b><u>J</u></b></a>&nbsp;<a href=#k><b><u>K</u></b></a>
-                    <a href=#l><b><u>L</u></b></a>&nbsp;<a href=#m><b><u>M</u></b></a>&nbsp;<a href=#n><b><u>N</u></b></a>
-                    <a href=#o><b><u>O</u></b></a>&nbsp;<a href=#p><b><u>P</u></b></a>&nbsp;<a href=#r><b><u>R</u></b></a>
-                    <a href=#s><b><u>S</u></b></a>&nbsp;<a href=#t><b><u>T</u></b></a>&nbsp;<a href=#u><b><u>U</u></b></a>
-                    <a href=#v><b><u>V</u></b></a>&nbsp;<a href=#y><b><u>Y</u></b></a>&nbsp;<a href=#z><b><u>Z</u></b></a>
+                    <a href=#i><b><u>I</u></b></a>&nbsp;<a href=#j><b><u>J</u></b></a>&nbsp;<a
+                            href=#k><b><u>K</u></b></a>
+                    <a href=#l><b><u>L</u></b></a>&nbsp;<a href=#m><b><u>M</u></b></a>&nbsp;<a
+                            href=#n><b><u>N</u></b></a>
+                    <a href=#o><b><u>O</u></b></a>&nbsp;<a href=#p><b><u>P</u></b></a>&nbsp;<a
+                            href=#r><b><u>R</u></b></a>
+                    <a href=#s><b><u>S</u></b></a>&nbsp;<a href=#t><b><u>T</u></b></a>&nbsp;<a
+                            href=#u><b><u>U</u></b></a>
+                    <a href=#v><b><u>V</u></b></a>&nbsp;<a href=#y><b><u>Y</u></b></a>&nbsp;<a
+                            href=#z><b><u>Z</u></b></a>
                 </center>
 
             </td>
@@ -231,10 +236,8 @@
             <TD class="tara"><B>Prefix</B></TD>
         </TR>
         <tr>
-            <td class="txt4" bgcolor="" #EEEEEE
-            "">Danemarca </td>
-            <td bgcolor="" #E4E4DD
-            "" class="txt4">0245</td>
+            <td class="txt4">Danemarca</td>
+            <td class="txt4">0245</td>
         </tr>
         <TR>
             <TD class="tara" width=50%>Djibouti-Africa</TD>
@@ -244,7 +247,7 @@
     </table>
     <br>
 
-    <table border=0 cellspacing=0 cellpadding=0 align="center" width="400">
+    <table>
         <tr>
             <Td align=right>
                 <a href=#sus id="sus"><b><u>Sus</u></b></a>
@@ -254,7 +257,7 @@
     <br><br>
     <a name=#e id="e"></a>
 
-    <TABLE cellSpacing=1 cellpadding=2 align="center" width="400" border=0>
+    <TABLE cellSpacing=1 cellpadding=2 width="400" border=0>
         <TBODY>
         <TR>
             <TD class="tara"><B>Tara</B></TD>
@@ -499,7 +502,7 @@
         </tbody>
     </table>
     <br>
-    <table border=0 cellspacing=0 cellpadding=0 align="center" width="400">
+    <table>
         <tr>
             <Td align=right>
                 <a href=#sus id="sus"><b><u>Sus</u></b></a>
@@ -507,9 +510,7 @@
         </tr>
     </table>
     <br><br>
-
     <a name=#k id="k"></a>
-
     <TABLE cellSpacing=1 cellpadding=2 align="center" width="400" border=0>
         <TBODY>
         <TR>
@@ -531,8 +532,7 @@
         </tbody>
     </table>
     <br>
-
-    <table border=0 cellspacing=0 cellpadding=0 align="center" width="400">
+    <table>
         <tr>
             <Td align=right>
                 <a href=#sus id="sus"><b><u>Sus</u></b></a>
@@ -543,7 +543,7 @@
 
     <a name=#l id="l"></a>
 
-    <TABLE cellSpacing=1 cellpadding=2 align="center" width="400" border=0>
+    <TABLE cellSpacing=1 cellpadding=2 width="400" border=0>
         <TBODY>
         <TR>
             <TD class="tara"><B>Tara</B></TD>

@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection AutoloadingIssuesInspection */
 /* SVN FILE: $Id: database.php.default 8004 2009-01-16 20:15:21Z gwoo $ */
 /**
  * This is core configuration file.
@@ -62,30 +62,32 @@
  * For MySQL, MySQLi, Postgres and DB2, specifies the character encoding to use when connecting to the
  * database.  Uses database default.
  */
-class DATABASE_CONFIG {
+class DATABASE_CONFIG
+{
 
-   var $default = array(
-	   'driver'     => 'mysql',
-	   'persistent' => false,
-	   'host'       => 'localhost',
-	   'login'      => 'root', //
-	   'password'   => '', //
-	   'database'   => 'publion', //
-	   'prefix'     => ''
-   );
+    public $default
+        = array(
+            'driver'     => 'mysql',
+            'persistent' => false,
+            'host'       => 'localhost',
+            'login'      => 'root', //
+            'password'   => '', //
+            'database'   => 'publion', //
+            'prefix'     => ''
+        );
 
-   //  publion_cakephp
-   // cakepublion
+    //  publion_cakephp
+    // cakepublion
 
-   var $test = array(
-	   'driver'     => 'mysql',
-	   'persistent' => false,
-	   'host'       => 'localhost',
-	   'login'      => 'user',
-	   'password'   => 'password',
-	   'database'   => 'test_database_name',
-	   'prefix'     => ''
-   );
+    public $test
+        = array(
+            'driver'     => 'mysql',
+            'persistent' => false,
+            'host'       => 'localhost',
+            'login'      => 'user',
+            'password'   => 'password',
+            'database'   => 'test_database_name',
+            'prefix'     => ''
+        );
 }
 
-?>

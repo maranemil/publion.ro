@@ -1,11 +1,13 @@
 <?php
 
-$arTitle = trim(substr(ucwords($Article['title']), 0, 35)) . '';
-if ($arTitle == "") $arTitle = strip_tags(substr(ucwords($Article['descr']), 0, 35)) . '';
-$hrefTitle = trim(substr(ucwords($Article['descr']), 0, 155)) . '...';
+$arTitle = ucwords(trim(substr($Article['title'], 0, 35)));
+if ($arTitle === "") {
+    $arTitle = strip_tags(ucwords(substr($Article['descr'], 0, 35)));
+}
+$hrefTitle = ucwords(trim(substr($Article['descr'], 0, 155))) . '...';
 
 $ArFld = substr(str_replace("-", "", $Article['date']), 0, 6); // MONTHLY FOLDER PATH
-if (($Article['image'] != null) && (filesize(ROOT . "/app/webroot/img/upload/" . $ArFld . "/" . $Article['image']) > 8000)) {
+if (($Article['image'] !== null) && (filesize(ROOT . "/app/webroot/img/upload/" . $ArFld . "/" . $Article['image']) > 8000)) {
    $sImgAr = "<a href='" . $this->webroot . "articles/view/" . $Article['id'] . "' >"; // class='tipnfo' title='".$hrefTitle."'
    // ".str_replace(array(',',' ','-','.','/',':','?',';','(',')') ,'_',strip_tags(substr($Article['descr'],0,70))).".htm
 
@@ -24,7 +26,7 @@ else {
 <div class="item_list_thumb" style="">
     <div class="item_content_imgbox">
 	   <?= $sImgAr ?>
-	   <?
+       <?php
 
 	   ?>
     </div>
@@ -48,7 +50,7 @@ else {
     <div class="clearer"></div>
 </div>
 
-<!--  <a href="<?= $this->webroot . "articles/showcategory/" . $Article['category_id']; ?>"> Categorie:
+<!--  <a href="<?= $this->webroot . "articles/showcategory/" . $Article['category_id'] ?>"> Categorie:
 					<?php echo $this->requestAction('articles/showcategory/' . $Article['category_id'] . '/'); ?>
 				-	<?php echo $this->requestAction('articles/showsubcategory/' . $Article['subcategory_id'] . '/'); ?><br />
 			</a> -->
@@ -64,5 +66,5 @@ if($this->params['url']['searchq']){
 echo utf8_encode(ucwords(substr($Article['descr'],0,200)));
 */
 ?>
-<? // echo Sanitize::html(ucwords(substr($Article['descr'],0,200))); ?>
+<?php // echo Sanitize::html(ucwords(substr($Article['descr'],0,200))); ?>
 	

@@ -1,6 +1,6 @@
 <div id="recipeMed" style="">
-   <?php echo $Medic['name']; ?>
+    <?php echo $Medic['name']; ?>
     <p>
-        Adresa: <BR><?php echo $Medic['adress']; ?>
+        Adresa: <br/><?php echo $Medic['adress']; ?>
     </p>
 </div>

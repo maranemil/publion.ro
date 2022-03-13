@@ -1,4 +1,6 @@
-<?php
+<?php /** @noinspection PhpMultipleClassDeclarationsInspection */
+/** @noinspection AutoloadingIssuesInspection */
+/** @noinspection PhpUnused */
 
 /**
  * Modello delle Categorie.
@@ -9,92 +11,94 @@
  * @license        http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 
-class Subcategory extends AppModel {
-   /**
-	* Nome del modello.
-	* @var string
-	*/
-   var $name = 'Subcategory';
+class Subcategory extends AppModel
+{
+    /**
+     * Nome del modello.
+     * @var string
+     */
+    public $name = 'Subcategory';
 
-   /**
-	* Relazione uno a molti.
-	* @var mixed
-	*/
+    /**
+     * Relazione uno a molti.
+     * @var mixed
+     */
 
 // var $belongsTo = 'User';
 
-   var $belongsTo = array('Categories' =>
-							  array('className'  => 'Category',
-									'foreignKey' => 'id',
-									'conditions' => '',
-									'fields'     => '',
-									'order'      => '',
-									'dependent'  => ''
-							  ),
-						  'Articles'   =>
-							  array('className'  => 'Article',
-									'foreignKey' => 'subcategory_id',
-									'conditions' => '',
-									'fields'     => '',
-									'order'      => '',
-									'dependent'  => ''
-							  )
-   );
-   /*
-	   var $hasMany = array('Articles' =>
-							   array('className' => 'Article',
-											   'foreignKey' => 'subcategory_id',
-											   'conditions' => '',
-											   'fields' => '',
-											   'order' => '',
-											   'dependent' => ''
-							   )
-								   ,
-							   'Subcategories' =>
-							   array('className' => 'Subcategory',
-											   'foreignKey' => 'category_id',
-											   'conditions' => '',
-											   'fields' => '',
-											   'order' => '',
-											   'dependent' => ''
-							   )
+    public $belongsTo
+        = array('Categories' =>
+                    array('className'  => 'Category',
+                          'foreignKey' => 'id',
+                          'conditions' => '',
+                          'fields'     => '',
+                          'order'      => '',
+                          'dependent'  => ''
+                    ),
+                'Articles'   =>
+                    array('className'  => 'Article',
+                          'foreignKey' => 'subcategory_id',
+                          'conditions' => '',
+                          'fields'     => '',
+                          'order'      => '',
+                          'dependent'  => ''
+                    )
+        );
+    /*
+        var $hasMany = array('Articles' =>
+                                array('className' => 'Article',
+                                                'foreignKey' => 'subcategory_id',
+                                                'conditions' => '',
+                                                'fields' => '',
+                                                'order' => '',
+                                                'dependent' => ''
+                                )
+                                    ,
+                                'Subcategories' =>
+                                array('className' => 'Subcategory',
+                                                'foreignKey' => 'category_id',
+                                                'conditions' => '',
+                                                'fields' => '',
+                                                'order' => '',
+                                                'dependent' => ''
+                                )
 
-	   );
-   */
-   /*
-	   var $hasOne = array('Prices' =>	array('className' => 'Price',
-											   'foreignKey' => 'company_id',
-											   'conditions' => '',
-											   'fields' => '',
-											   'order' => '',
-											   'dependent' => ''
-							   )
-	   );
-   */
-   /*
-	   var $hasAndBelongsToMany = array('Article' => array('className' => 'Article',
-							   'joinTable' => 'Articles',
-							   'foreignKey' => 'category_id',
-							   'associationForeignKey' => 'company_id',
-							   'with' => 'Companies',
-							   'unique' => true
-			   )
-	   );
-   */
+        );
+    */
+    /*
+        var $hasOne = array('Prices' =>	array('className' => 'Price',
+                                                'foreignKey' => 'company_id',
+                                                'conditions' => '',
+                                                'fields' => '',
+                                                'order' => '',
+                                                'dependent' => ''
+                                )
+        );
+    */
+    /*
+        var $hasAndBelongsToMany = array('Article' => array('className' => 'Article',
+                                'joinTable' => 'Articles',
+                                'foreignKey' => 'category_id',
+                                'associationForeignKey' => 'company_id',
+                                'with' => 'Companies',
+                                'unique' => true
+                )
+        );
+    */
 
-   /**
-	* Validazione dei campi.
-	* @var array
-	*/
+    /**
+     * Validazione dei campi.
+     * @var array
+     */
 
-   /*
-	   var $validate = array(
-		   'title' => array(
-			   'rule'		=> array('minLength', 1),
-			   'required'	=> TRUE
-		   )
-	   );
-   */
+    /*
+        var $validate = array(
+            'title' => array(
+                'rule'		=> array('minLength', 1),
+                'required'	=> TRUE
+            )
+        );
+    */
 
 }
 

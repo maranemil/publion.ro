@@ -1,30 +1,32 @@
 <?php //echo $this->renderElement('post',$post); ?>
-<? //print_r($arTmpCatSubCats); ?>
+<?php //print_r($arTmpCatSubCats); ?>
 
-<?
+<?php
 foreach ($arTmpState as $itemSel) {
-   $JudeteAll .= "<option value='" . $itemSel["judets"]["id"] . "'> " . $itemSel["judets"]["judet"] . "</option >	";
+    $JudeteAll .= "<option value='" . $itemSel["judets"]["id"] . "'> " . $itemSel["judets"]["judet"] . "</option >	";
 }
 // image 		 	 	 	 	 	 		 	 	 	 	
 ?>
 
 <div class="registerBox">
-
     <span> Adauga anunt nou </span><BR><BR>
-
     <form method="post" action="<?php echo $html->url('/cars/step2/'); ?>" enctype="multipart/form-data">
 
         <div class="register_group">JUDET</div>
         <div class="register_input">
+            <label for="data[Car][state]"></label>
             <select name="data[Car][state]" id="data[Car][state]">
-			   <?= $JudeteAll ?>
+                <?= $JudeteAll ?>
             </select>
         </div>
 
         <div class="register_group">Descriere</div>
         <div class="register_input">
-            <textarea name="data[Car][info]" style="width:300px; height: 150px"><?= $post[0]['Car']['info']; ?></textarea>
-		   <?php echo $form->error('Car/info', 'Trebuie sa adaugi o descriere...'); ?>
+            <label>
+                <textarea name="data[Car][info]"
+                    style="width:300px; height: 150px"><?= $post[0]['Car']['info'] ?></textarea>
+            </label>
+            <?php echo $form->error('Car/info', 'Trebuie sa adaugi o descriere...'); ?>
         </div>
 
         <div class="register_group"> Tip:</div>
@@ -98,39 +100,38 @@ foreach ($arTmpState as $itemSel) {
 
         <div class="register_group"> Pret:</div>
         <div class="register_input">
-		   <?php echo $form->text('Car/price', array('size' => '20', 'value' => $post[0]['Car']['price'])); ?>
+            <?php echo $form->text('Car/price', array('size' => '20', 'value' => $post[0]['Car']['price'])); ?>
         </div>
 
         <div class="register_group"> Anul:</div>
         <div class="register_input">
             <select name="data[Car][years]" id="data[Car][years]">
-			   <?
-			   $yrc = date("Y");
-			   for ($yr = 1980; $yr <= $yrc; $yr++) {
-				  if ($yr != $yrc) {
-					 echo "<option value='" . $yr . "' > " . $yr . " </option>";
-				  }
-				  else {
-					 echo "<option value='" . $yr . "' selected> " . $yr . " </option>";
-				  }
-			   }
-			   ?>
+                <?php
+                $yrc = date("Y");
+                for ($yr = 1980; $yr <= $yrc; $yr++) {
+                    if ($yr !== $yrc) {
+                        echo "<option value='" . $yr . "' > " . $yr . " </option>";
+                    } else {
+                        echo "<option value='" . $yr . "' selected> " . $yr . " </option>";
+                    }
+                }
+                ?>
             </select>
         </div>
 
         <div class="register_group"> Km:</div>
         <div class="register_input">
-		   <?php echo $form->text('Car/km', array('size' => '20', 'value' => $post[0]['Car']['km'])); ?>
+            <?php echo $form->text('Car/km', array('size' => '20', 'value' => $post[0]['Car']['km'])); ?>
         </div>
 
         <div class="register_group"> Putere:</div>
         <div class="register_input">
-		   <?php echo $form->text('Car/power', array('size' => '20', 'value' => $post[0]['Car']['power'])); ?>
+            <?php echo $form->text('Car/power', array('size' => '20', 'value' => $post[0]['Car']['power'])); ?>
         </div>
 
         <div class="register_group"> cmc:</div>
         <div class="register_input">
-		   <?php echo $form->text('Car/cmc', array('size' => '20', 'value' => $post[0]['Car']['cmc'])); ?>
+            <?php echo $form->text('Car/cmc', array('size' => '20', 'value' => $post[0]['Car']['cmc'])); ?>
         </div>
 
         <div class="register_group"> Viteze:</div>
@@ -152,29 +153,29 @@ foreach ($arTmpState as $itemSel) {
 
         <div class="register_group"> Persoana:</div>
         <div class="register_input">
-		   <?php echo $form->text('Car/person', array('size' => '20', 'value' => $post[0]['Car']['person'])); ?>
+            <?php echo $form->text('Car/person', array('size' => '20', 'value' => $post[0]['Car']['person'])); ?>
         </div>
 
         <div class="register_group"> Telefon:</div>
         <div class="register_input">
-		   <?php echo $form->text('Car/phone', array('size' => '20', 'value' => $post[0]['Car']['phone'])); ?>
+            <?php echo $form->text('Car/phone', array('size' => '20', 'value' => $post[0]['Car']['phone'])); ?>
         </div>
 
         <div class="register_group">Pagina web:</div>
         <div class="register_input">
-		   <?php echo $form->text('Car/web', array('size' => '20', 'value' => $post[0]['Car']['web'])); ?>
+            <?php echo $form->text('Car/web', array('size' => '20', 'value' => $post[0]['Car']['web'])); ?>
         </div>
 
         <BR><BR>
-	   <?php
-	   echo $form->create('Image/images', array('action' => 'add', 'type' => 'file'));
-	   echo $form->file('File');
-	   ?>
+        <?php
+        echo $form->create('Image/images', array('action' => 'add', 'type' => 'file'));
+        echo $form->file('File');
+        ?>
 
-	   <?php echo $html->file('File'); ?>
+        <?php echo $html->file('File'); ?>
 
         <BR><BR>
-	   <?php echo $form->submit('Adauga'); ?>
+        <?php echo $form->submit('Adauga'); ?>
     </form>
 
 </div>

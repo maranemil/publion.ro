@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpDynamicAsStaticMethodCallInspection */
 /* SVN FILE: $Id: routes.php 7945 2008-12-19 02:16:01Z gwoo $ */
 /**
  * Short description for file.
@@ -38,4 +38,3 @@ Router::connect('/', array('controller' => 'articles', 'action' => 'index'));
 Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 //Router::connect('http://localhost/work/publion/pages/*', array('controller' => 'pages', 'action' => 'display'));
 //Router::connect('http://localhost/work/publion/articles/*', array('controller' => 'articles', 'action' => 'display'));
-?>

@@ -6,59 +6,58 @@
 
 ?>
     <div class="registerBox">
-
         <span>Profil <?php echo $user['User']['name'] . " " . $user['User']['pastname']; ?></span><BR><BR>
 
-        <form method="post" enctype="multipart/form-data" action="<?php echo $html->url('/users/savemyprofile/' . $user['User']['id']); ?>">
+        <form method="post" enctype="multipart/form-data"
+              action="<?php echo $html->url('/users/savemyprofile/' . $user['User']['id']); ?>">
 
             <div class="register_group"> Prenume:</div>
             <div class="register_input">
-			   <?php echo $form->text('User/name', array('size' => '20', 'value' => $user['User']['name'])); ?>
+                <?php echo $form->text('User/name', array('size' => '20', 'value' => $user['User']['name'])); ?>
             </div>
 
             <div class="register_group"> Nume:</div>
             <div class="register_input">
-			   <?php echo $form->text('User/pastname', array('size' => '20', 'value' => $user['User']['pastname'])); ?>
+                <?php echo $form->text('User/pastname', array('size' => '20', 'value' => $user['User']['pastname'])); ?>
             </div>
 
             <div class="register_group">E-Mail:</div>
             <div class="register_input">
-			   <?php echo $form->text('User/e-mail', array('size' => '20', 'value' => $user['User']['e-mail'], 'readonly' => 'readonly')); ?>
+                <?php echo $form->text('User/e-mail', array('size' => '20', 'value' => $user['User']['e-mail'], 'readonly' => 'readonly')); ?>
             </div>
 
             <div class="register_group"> Nickname:</div>
             <div class="register_input">
-			   <?php echo $form->text('User/nickname', array('size' => '20', 'value' => $user['User']['nickname'])); ?>
+                <?php echo $form->text('User/nickname', array('size' => '20', 'value' => $user['User']['nickname'])); ?>
             </div>
 
             <div class="register_group">Interese:</div>
             <div class="register_input">
-			   <?php echo $form->text('User/interests', array('style' => 'width:200px; height: 150px', 'type' => 'textarea', 'size' => '20', 'class' => 'input_big', 'value' => $user['User']['interests'])); ?>
-			   <?php echo $form->error('User/interests', 'Email muss angegeben werden'); ?>
+                <?php echo $form->text('User/interests', array('style' => 'width:200px; height: 150px', 'type' => 'textarea', 'size' => '20', 'class' => 'input_big', 'value' => $user['User']['interests'])); ?>
+                <?php echo $form->error('User/interests', 'Email muss angegeben werden'); ?>
             </div>
-
-		   <?
-		   $checked = 'checked="checked"';
-		   ?>
+            <?php
+            $checked = 'checked="checked"';
+            ?>
 
             <div class="register_group">Ascunde email:</div>
             <div class="register_input">
-			   <?php
-			   //echo $form->checkbox('User/showhide', array($checked1=>$checked2));
-			   /*
-			   echo $form->input("User.showhide",
-					   array(
-						   'label'=>"showhide",
-						   'type'=>'checkbox',
-						   'checked'=>($user["User"]["showhide"][$id] == 1 ? 'checked' : false)
-						   )
-					   );
-			   */
-			   ?>
+                <?php
+                //echo $form->checkbox('User/showhide', array($checked1=>$checked2));
+                /*
+                echo $form->input("User.showhide",
+                        array(
+                            'label'=>"showhide",
+                            'type'=>'checkbox',
+                            'checked'=>($user["User"]["showhide"][$id] == 1 ? 'checked' : false)
+                            )
+                        );
+                */
+                ?>
                 <!-- <input type="hidden" name="data[User][showhide]" value="0" id="UserShowhide_" /> -->
-                <input type="checkbox" name="data[User][showhide]" <? if ($user['User']['showhide'] == 1) {
-				   echo $checked;
-				} ?> id="data[User][showhide]"/>
+                <input type="checkbox" name="data[User][showhide]" <?php if ($user['User']['showhide'] == 1) {
+                    echo $checked;
+                } ?> id="data[User][showhide]"/>
 
             </div>
 
@@ -66,15 +65,15 @@
 
             <div class="register_group"> Poza (Optional)</div>
             <div class="register_input">
-			   <?php
-			   echo $form->create('Image/images', array('action' => 'add', 'type' => 'file'));
-			   echo $form->file('File');
-			   ?>
+                <?php
+                echo $form->create('Image/images', array('action' => 'add', 'type' => 'file'));
+                echo $form->file('File');
+                ?>
             </div>
 
             <div class="register_group"></div>
             <div class="register_input">
-			   <?php echo $form->submit('Salveaza'); ?>
+                <?php echo $form->submit('Salveaza'); ?>
             </div>
 
         </form>

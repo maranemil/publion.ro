@@ -1,12 +1,12 @@
-<script language='JavaScript'>
-	<!--
-	function tagFill(tag, id) {
-		window.document.getElementById('TagTag').value = tag;
-		window.document.getElementById('TagId').value = id;
-		return false;
-	}
+<script>
+    <!--
+    function tagFill(tag, id) {
+        window.document.getElementById('TagTag').value = tag;
+        window.document.getElementById('TagId').value = id;
+        return false;
+    }
 
-	//-->
+    //-->
 </script>
 <?php echo $html->formTag('/tags/save/');
 echo $html->hidden('Tag/id');

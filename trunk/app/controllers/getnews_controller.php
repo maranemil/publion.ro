@@ -1,5 +1,11 @@
-<?php
+<?php /** @noinspection PhpMultipleClassDeclarationsInspection */
+/** @noinspection AutoloadingIssuesInspection */
+/** @noinspection PhpUnused */
+
 /**
+ * @property $Session
+ * @property $Pagination
+ * @property $Getnews
  * Controller Companies
  * @author         Maran Emil | Maran Project | maran_emil@yahoo.com
  * @copyright      Copyright 2009, Maran Project.
@@ -14,16 +20,16 @@ class GetnewsController extends AppController {
 	* @var string
 	*/
 
-   var $name = "Getnews";
+   public $name = "Getnews";
 
    /**
 	* Helpers
 	* @var array
 	*/
 
-   var $uses       = array('Getnew', 'User');
-   var $helpers    = array('Html', 'Javascript', 'Session', 'Head', 'Javascript', 'Ajax', 'Form', 'Pagination');
-   var $components = array('Pagination', 'Upload');
+   public $uses       = array('Getnew', 'User');
+   public $helpers    = array('Html', 'Javascript', 'Session', 'Head', 'Javascript', 'Ajax', 'Form', 'Pagination');
+   public $components = array('Pagination', 'Upload');
 
    public function index() {
 	  $criteria = null;
@@ -33,9 +39,8 @@ class GetnewsController extends AppController {
 	  $paging['show']      = '6';
 
 	  list($order, $limit, $page) = $this->Pagination->init($criteria, $paging);
-	  $arTmpArt = $this->Getnew->findAll($criteria, "", $order, $limit, $page);
+	  $arTmpArt = $this->Getnews->findAll($criteria, "", $order, $limit, $page);
 
-	  //print "<pre>"; print_r($arTmpArt); print "</pre>";
 
 	  if ($arTmpArt) {
 		 //$this->set(compact('comments','currentDateTime'));
@@ -50,7 +55,6 @@ class GetnewsController extends AppController {
 
 	  $arTmpUsr = $this->Session->read("User");
 	  $this->set("arTmpUsr", $arTmpUsr);
-	  //	print_r($this->Session ->read("User"));
    }
 
 }

@@ -7,12 +7,15 @@ include("app/config/cake_labels.php");
 
     <p>
         (1).<B>Percepeti anumite taxe pt inscrierea in baza dvs de date?</B><br>
-        R. Nu se percepe nici o taxa sau comision. Este gratuit 100%. Puteti adauga orice produs. Orice firma poate adauga oricand orice produs cu descriere si poza pe
+        R. Nu se percepe nici o taxa sau comision. Este gratuit 100%. Puteti adauga orice produs. Orice firma poate
+        adauga oricand orice produs cu descriere si poza pe
         www.publion.ro.
         <br><br>
 
-        (2).<B>Suportati modalitatea de plata folosind cardul de credit? Daca da , prin ce modalitate primesc banii? aveti server de validare ce foloseste tehnologia SSL ?</B><br>
-        R. Plata se face prin mandat postal de catre cel care posteaza anuntzul spre cel care cumpara. Nu avem sistem de cumparare prin card si nu credem ca romania e inca
+        (2).<B>Suportati modalitatea de plata folosind cardul de credit? Daca da , prin ce modalitate primesc banii?
+            aveti server de validare ce foloseste tehnologia SSL ?</B><br>
+        R. Plata se face prin mandat postal de catre cel care posteaza anuntzul spre cel care cumpara. Nu avem sistem de
+        cumparare prin card si nu credem ca romania e inca
         pregatita pt astfel de sistem. Lumea e inca speriata de fraudele ce se pot face prin oferirea de date ale CC.
         <br><br>
 
@@ -25,11 +28,13 @@ include("app/config/cake_labels.php");
         <br><br>
 
         (5).<B>Care este numarul maxim de anunturi pe care le pot adauga pe site?</B><br>
-        R. Numarul maxim de anunturi pe care le puteti posta pe site este de maxim 3 anunturi / zi. Am redus numarul la 3 deoarece nu dorim sa se repete aceasi poza sau
+        R. Numarul maxim de anunturi pe care le puteti posta pe site este de maxim 3 anunturi / zi. Am redus numarul la
+        3 deoarece nu dorim sa se repete aceasi poza sau
         acelasi anunt de prea multe ori.
         <br><br>
 
-        <B>www.publion.ro</B> a fost creat pt ca firmele mici sau persoane fizice sa poata face cunoscute pe internet produse si servicii. Este complet gratuit acest serviciu
+        <B>www.publion.ro</B> a fost creat pt ca firmele mici sau persoane fizice sa poata face cunoscute pe internet
+        produse si servicii. Este complet gratuit acest serviciu
         de web. Pentru alte intrebari va rog sa trimite-ti un email pe adresa : <A HREF="mailto:maran_emil@yahoo.com">maran_emil@yahoo.com</A>.
 
     </p>

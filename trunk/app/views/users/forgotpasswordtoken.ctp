@@ -2,14 +2,14 @@
     <!-- new password 1 -->
     <div class="register_group">Parola noua:</div>
     <div class="register_input">
-	   <?php echo $form->text('User/newpassword1', array('size' => '15', 'class' => 'input_medium')); ?><br/>
+        <?php echo $form->text('User/newpassword1', array('size' => '15', 'class' => 'input_medium')); ?><br/>
     </div>
     <!-- new password 1 -->
 
     <!-- new password 2 -->
     <div class="register_group">Re-introdu Parola noua:</div>
     <div class="register_input">
-	   <?php echo $form->text('User/newpassword2', array('size' => '15', 'class' => 'input_medium')); ?><br/>
+        <?php echo $form->text('User/newpassword2', array('size' => '15', 'class' => 'input_medium')); ?><br/>
     </div>
     <!-- new password 2 -->
 
@@ -17,6 +17,6 @@
 
     <div class="register_group"></div>
     <div class="register_input">
-	   <?php echo $form->submit('Schimba Parola'); ?>
+        <?php echo $form->submit('Schimba Parola'); ?>
     </div>
 </form>

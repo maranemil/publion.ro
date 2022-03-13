@@ -7,4 +7,4 @@ $html->addCrumb(__("Home", true), "/");
    <?php echo $this->renderElement("user", $User); ?>
 <?php endforeach; ?>
 
-<? echo $this->renderElement('pagination', $paging); ?>
+<?php echo $this->renderElement('pagination', $paging); ?>

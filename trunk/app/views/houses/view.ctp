@@ -3,19 +3,15 @@
 	   <?php
 
 	   $ArFld = substr(str_replace("-", "", $House[0]['houses']['date']), 0, 6); // MONTHLY FOLDER PATH
-	   if ($House[0]['houses']['image'] != null) {
-		  echo "<a href='" . $this->webroot . "houses/view/" . $House[0]['houses']['id'] . "/" . str_replace(array(',', ' ', '-', '.', '/', ':', '?', ';', '(', ')'), '_', strip_tags(substr($House[0]['houses']['descr'], 0, 70))) . ".htm'>";
-
-		  echo "<img src='" . $this->webroot . "img/upload2/" . $ArFld . "/" . trim($House[0]['houses']['image']) . "' width=200></a>";
+       echo "<a href='" . $this->webroot . "houses/view/" . $House[0]['houses']['id'] . "/" . str_replace(array(',', ' ', '-', '.', '/', ':', '?', ';', '(', ')'), '_', strip_tags(substr($House[0]['houses']['descr'], 0, 70))) . ".htm'>";
+       if ($House[0]['houses']['image'] !== null) {
+           echo "<img src='" . $this->webroot . "img/upload2/" . $ArFld . "/" . trim($House[0]['houses']['image']) . "' width=200></a>";
 	   }
 	   else {
-		  echo "<a href='" . $this->webroot . "houses/view/" . $House[0]['houses']['id'] . "/" . str_replace(array(',', ' ', '-', '.', '/', ':', '?', ';', '(', ')'), '_', strip_tags(substr($House[0]['houses']['descr'], 0, 70))) . ".htm'>";
-
-		  echo "<img src='" . $this->webroot . "img/upload2/noimg.jpg' width=200></a>";
+           echo "<img src='" . $this->webroot . "img/upload2/noimg.jpg' width=200></a>";
 		  //echo "<a href='".PATHWEB."articles/view/".$Article['id']."/'><img src='".PATHWEBROOT."img/upload/noimg.jpg' width=150></a>";
 	   }
 	   ?>
-
     </div>
     <div id="articleTitle">
 	   <?php echo ucwords($House[0]['houses']['type']); ?> / <?php echo ucwords($House[0]['houses']['price']); ?><br/>
@@ -34,14 +30,14 @@
 
 	   <?php echo ucwords(substr($House[0]['houses']['info'], 0, 200)); ?><br/><br/>
 
-	   <? //print_r($this->requestAction("houses/getjudetnamebyid/".$House[0]['houses']['state']))?>
-	   <?
+        <?php //print_r($this->requestAction("houses/getjudetnamebyid/".$House[0]['houses']['state']))?>
+        <?php
 	   $judArTmp = $this->requestAction("houses/getjudetnamebyid/" . $House[0]['houses']['state']);
 	   $judName  = $judArTmp[0]["Judet"]["judet"];
 	   ?>
 
         ADRESA: <br/>
-        JUDET: <?php //echo $House[0]['houses']['state']; ?>  <? echo $judName ?> <br/>
+        JUDET: <?php //echo $House[0]['houses']['state']; ?>  <?php echo $judName ?> <br/>
         ORAS: <?php echo $House[0]['houses']['town']; ?><br/>
         STRADA: <?php echo $House[0]['houses']['street']; ?><br/>
         ZONA: <?php echo $House[0]['houses']['position']; ?><br/>
@@ -49,11 +45,11 @@
         EMAIL: <?php echo $House[0]['houses']['email']; ?><br/>
         WEB: <a href="http://<?php echo str_replace("http://", "", $House[0]['houses']['web']); ?>" target="_new"><?php echo $House[0]['houses']['web']; ?></a><br/>
 
-	   <? // echo Sanitize::html(ucwords(substr($Article['descr'],0,200))); ?>
+        <?php // echo Sanitize::html(ucwords(substr($Article['descr'],0,200))); ?>
         <br/><br/>
     </div>
     <div style="clear:both"></div>
-   <?
+    <?php
    $gmapQuery = $House[0]['houses']['street'] . '+' . $House[0]['houses']['town'] . '+' . $judName . '+Romania';
    ?>
 
@@ -80,7 +76,7 @@
 
 </div>
 
-<? echo $this->renderElement('googlemain1'); ?>
+<?php echo $this->renderElement('googlemain1'); ?>
 
 <div style="clear:both"></div>
 

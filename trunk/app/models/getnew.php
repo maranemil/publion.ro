@@ -1,4 +1,6 @@
-<?php
+<?php /** @noinspection PhpMultipleClassDeclarationsInspection */
+/** @noinspection AutoloadingIssuesInspection */
+/** @noinspection PhpUnused */
 
 /**
  * Modello delle Categorie.
@@ -14,7 +16,7 @@ class Getnew extends AppModel {
 	* Nome del modello.
 	* @var string
 	*/
-   var $name = 'Getnew';
+   public $name = 'Getnew';
 
    /**
 	* Relazione uno a molti.

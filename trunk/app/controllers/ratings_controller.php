@@ -1,4 +1,6 @@
-<?php
+<?php /** @noinspection AutoloadingIssuesInspection */
+/** @noinspection PhpUnused */
+/** @noinspection PhpMultipleClassDeclarationsInspection */
 
 /**
  * Controller dei Messaggi.
@@ -9,21 +11,23 @@
  * @license        http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 
-class RatingsController extends AppController {
-   /**
-	* No....
-	* @var string
-	*/
+class RatingsController extends AppController
+{
+    /**
+     * No....
+     * @var string
+     */
 
-   var $name = "Ratings";
+    public $name = "Ratings";
 
-   /**
-	* Helpers
-	* @var array
-	*/
+    /**
+     * Helpers
+     * @var array
+     */
 
-   public function index() {
-   }
+    public function index()
+    {
+    }
 
 }
 

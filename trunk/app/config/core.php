@@ -1,4 +1,5 @@
-<?php
+<?php /** @noinspection PhpParamsInspection */
+/** @noinspection PhpDynamicAsStaticMethodCallInspection */
 /* SVN FILE: $Id: core.php 7945 2008-12-19 02:16:01Z gwoo $ */
 /**
  * This is core configuration file.
@@ -192,4 +193,3 @@ Cache::config('default', array('engine' => 'File'));
 /* GET LABELS */
 include("../../app/config/cake_labels.php");
 
-?>

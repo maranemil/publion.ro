@@ -10,14 +10,12 @@
    }
    ?>
 </div>
-
 <?php
 foreach ($arTmpRecipe as $arTmpRec):
    echo $this->renderElement("recipe", $arTmpRec);
 endforeach;
 ?>
-
-<?
+<?php
 echo $this->renderElement('pagination', $paging);
 ?> 
 

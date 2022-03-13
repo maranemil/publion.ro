@@ -2,27 +2,24 @@
 // Creo il navigatore.
 #$html->addCrumb(__("Home", TRUE), "/");
 ?>
-
 <div class="infoBox">
     <span>Anunturile mele</span><BR><BR>
-
     <p>
-	   <?php
-	   //print_r($Houses);
-	   foreach ($Houses as $House):
+        <?php
+        //print_r($Houses);
+        foreach ($Houses as $House):
+            $ArFld = substr(str_replace("-", "", $House['House']['date']), 0, 6); // MONTHLY FOLDER PATH
+            if (($House['House']['image'] !== null) && (filesize(ROOT . "/app/webroot/img/upload2/" . $ArFld . "/" . $House['House']['image']) > 8000)) {
+                $imgHTML = "<img src='" . $this->webroot . "img/upload2/" . $ArFld . "/" . trim($House['House']['image']) . "' width=25>";
+            }
 
-		  $ArFld = substr(str_replace("-", "", $House['House']['date']), 0, 6); // MONTHLY FOLDER PATH
-		  if (($House['House']['image'] != null) && (filesize(ROOT . "/app/webroot/img/upload2/" . $ArFld . "/" . $House['House']['image']) > 8000)) {
-			 $imgHTML = "<img src='" . $this->webroot . "img/upload2/" . $ArFld . "/" . trim($House['House']['image']) . "' width=25>";
-		  }
-
-		  echo "
+            echo "
 		<div class='myentries'>
 			<div style='float: left'>
 				" . $imgHTML . "
 			</div>
 			<div style='float: left'>
-				<img src='" . $this->webroot . "img/menu_pt.png'>
+				<img src='" . $this->webroot . "img/menu_pt.png' alt=>
 				<A HREF='" . $this->webroot . "houses/view/" . $House['House']["id"] . "' target='_new' class=\"tipnfo\" title=\"Vizualizeaza anunt intro noua fereastra\">
 					Cod " . $House['House']["id"] . " - Data " . $House['House']["date"] . "</a> |
 				<img src='" . $this->webroot . "img/div.gif' width='100' height=0>
@@ -35,21 +32,19 @@
 			<div style='clear: both'></div>
 		</div>
 		";
-	   endforeach;
-	   ?>
+        endforeach;
+        ?>
     </p>
-
     <p>
-	   <?php
-	   //print_r($Houses);
-	   foreach ($Cars as $Car):
+        <?php
+        //print_r($Houses);
+        foreach ($Cars as $Car):
+            $ArFld = substr(str_replace("-", "", $Car['Car']['date']), 0, 6); // MONTHLY FOLDER PATH
+            if (($Car['Car']['image'] !== null) && (filesize(ROOT . "/app/webroot/img/upload2/" . $ArFld . "/" . $Car['Car']['image']) > 8000)) {
+                $imgHTML = "<img src='" . $this->webroot . "img/upload2/" . $ArFld . "/" . trim($Car['Car']['image']) . "' width=25>";
+            }
 
-		  $ArFld = substr(str_replace("-", "", $Car['Car']['date']), 0, 6); // MONTHLY FOLDER PATH
-		  if (($Car['Car']['image'] != null) && (filesize(ROOT . "/app/webroot/img/upload2/" . $ArFld . "/" . $Car['Car']['image']) > 8000)) {
-			 $imgHTML = "<img src='" . $this->webroot . "img/upload2/" . $ArFld . "/" . trim($Car['Car']['image']) . "' width=25>";
-		  }
-
-		  echo "
+            echo "
 		<div class='myentries'>
 			<div style='float: left'>
 				" . $imgHTML . "
@@ -69,20 +64,18 @@
 			<div style='clear: both'></div>
 		</div>
 		";
-	   endforeach;
-	   ?>
+        endforeach;
+        ?>
     </p>
-
     <p>
-	   <?php
-	   //print_r($Houses);
-	   foreach ($Articles as $Article):
-
-		  $ArFld = substr(str_replace("-", "", $Article['Article']['date']), 0, 6); // MONTHLY FOLDER PATH
-		  if (($Article['Article']['image'] != null) && (filesize(ROOT . "/app/webroot/img/upload/" . $ArFld . "/" . $Article['Article']['image']) > 8000)) {
-			 $imgHTML = "<img src='" . $this->webroot . "img/upload/" . $ArFld . "/" . trim($Article['Article']['image']) . "' width=25>";
-		  }
-		  echo "
+        <?php
+        //print_r($Houses);
+        foreach ($Articles as $Article):
+            $ArFld = substr(str_replace("-", "", $Article['Article']['date']), 0, 6); // MONTHLY FOLDER PATH
+            if (($Article['Article']['image'] !== null) && (filesize(ROOT . "/app/webroot/img/upload/" . $ArFld . "/" . $Article['Article']['image']) > 8000)) {
+                $imgHTML = "<img src='" . $this->webroot . "img/upload/" . $ArFld . "/" . trim($Article['Article']['image']) . "' width=25>";
+            }
+            echo "
 		<div class='myentries'>
 			<div style='float: left'>
 				" . $imgHTML . "
@@ -102,10 +95,9 @@
 			<div style='clear: both'></div>
 		</div>
 		";
-	   endforeach;
-	   ?>
+        endforeach;
+        ?>
     </p>
-
     <div style='clear: both'></div>
 </div>
-<? #echo $this->renderElement('pagination', $paging);?> 
+<?php #echo $this->renderElement('pagination', $paging);?>

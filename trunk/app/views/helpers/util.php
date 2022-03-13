@@ -1,13 +1,18 @@
-<?php
+<?php /** @noinspection AutoloadingIssuesInspection */
+/** @noinspection PhpUnused */
 
 /**
  * Common utilities for helpers
+ * @property $Html
  * @author  RosSoft
  * @version 0.20
  * @package helpers
  */
 class UtilHelper extends Helper {
-   var $helpers = array('Html');
+    /**
+     * @var string[]
+     */
+   public $helpers = array('Html');
 
    /**
 	* Converts a string like Model/field to
@@ -17,16 +22,15 @@ class UtilHelper extends Helper {
 	*
 	* @return string
 	*/
-   function fieldname_to_formname($fieldName) {
+   public function fieldname_to_formname($fieldName) {
 	  if (strpos($fieldName, '/')) {
-		 $arr   = split('/', $fieldName);
-		 $model = $arr[0];
-		 $field = $arr[1];
-		 return "data[{$arr[0]}][{$arr[1]}]";
+		 $arr   = preg_split('/', $fieldName);
+		 /*$model = $arr[0];
+		 $field = $arr[1];*/
+		 return sprintf("data[%s][%s]", $arr[0], $arr[1]);
 	  }
-	  else {
-		 return $fieldName;
-	  }
+
+       return $fieldName;
    }
 
    /**
@@ -36,19 +40,22 @@ class UtilHelper extends Helper {
 	*
 	* @return string The value from the data array
 	*/
-   function retrieve_value($fieldName) {
+   public function retrieve_value($fieldName) {
 	  if (strpos($fieldName, '/')) {
-		 $arr   = split('/', $fieldName);
+		 $arr   = preg_split('/', $fieldName);
 		 $model = $arr[0];
 		 $field = $arr[1];
-		 if (isset($this->params['data'][$model][$field])) {
-			return $this->params['data'][$model][$field];
-		 }
-		 elseif (isset($this->data[$model][$field])) {
-			return $this->data[$model][$field];
-		 }
-		 else return false;
-	  }
+		 if (!isset($this->params['data'][$model][$field])) {
+             if (isset($this->data[$model][$field])) {
+                 return $this->data[$model][$field];
+             }
+
+             return false;
+         }
+
+          return $this->params['data'][$model][$field];
+      }
+      return false;
    }
 
    /**
@@ -82,8 +89,10 @@ class UtilHelper extends Helper {
 	*
 	* @return string
 	*/
-   function parse_attributes($options, $exclude = null, $insertBefore = ' ',
-							 $insertAfter = null) {
+   public function parse_attributes($options,
+                                    $exclude = null,
+                                    $insertBefore = ' ',
+                                    $insertAfter = null) {
 	  $minimizedAttributes = array(
 		  'compact',
 		  'checked',
@@ -107,24 +116,22 @@ class UtilHelper extends Helper {
 		 $out = array();
 
 		 foreach ($options as $key => $value) {
-			if (!in_array($key, $exclude)) {
-			   if (in_array($key, $minimizedAttributes) && ($value === 1 ||
-					   $value === true || $value === 'true' || in_array($value,
-						   $minimizedAttributes))) {
+			if (!in_array($key, $exclude, true)) {
+			   if (in_array($key, $minimizedAttributes, true) && ($value === 1 ||
+					   $value === true || $value === 'true' || in_array($value, $minimizedAttributes, true))) {
 				  $value = $key;
 			   }
-			   elseif (in_array($key, $minimizedAttributes)) {
+			   elseif (in_array($key, $minimizedAttributes, true)) {
 				  continue;
 			   }
-			   $out[] = "{$key}=\"{$value}\"";
+			   $out[] = sprintf("%s=\"%s\"", $key, $value);
 			}
 		 }
-		 $out = join(' ', $out);
+		 $out = implode(' ', $out);
 		 return $out ? $insertBefore . $out . $insertAfter : null;
 	  }
-	  else {
-		 return $options ? $insertBefore . $options . $insertAfter : null;
-	  }
+
+       return $options ? $insertBefore . $out . $insertAfter : null;
    }
 
    /**
@@ -135,14 +142,13 @@ class UtilHelper extends Helper {
 	*
 	* @return string ModelField
 	*/
-   function fieldname_to_formid($fieldName) {
-	  if (strpos($fieldName, '/')) {
-		 $arr = split('/', $fieldName);
-		 return $arr[0] . Inflector::camelize($arr[1]);
-	  }
-	  else {
-		 return $fieldName;
-	  }
+   public function fieldname_to_formid($fieldName) {
+	  if (!strpos($fieldName, '/')) {
+          return $fieldName;
+      }
+
+       $arr = preg_split('/', $fieldName);
+       return $arr[0] . Inflector::camelize($arr[1]);
    }
 
    /**
@@ -152,9 +158,8 @@ class UtilHelper extends Helper {
 	*
 	* @return string An absolute url like http://yourdomain.com/your_path_to_cake/controller/action/param1/param2
 	*/
-   function to_absolute_url($cake_url) {
+   public function to_absolute_url($cake_url) {
 	  return FULL_BASE_URL . $this->Html->url($cake_url);
    }
 }
 
-?>

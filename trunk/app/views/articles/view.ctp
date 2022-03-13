@@ -4,14 +4,14 @@
 </pre>
 -->
 
-<? //echo "<pre>"; print_r($userw); echo "</pre>"; ?>
+<?php //echo "<pre>"; print_r($userw); echo "</pre>"; ?>
 
 <script>
 	function saveRating(ratingval, articleid) {
 
 		$.ajax({
 			type: "GET",
-			url: "http://<?=$_SERVER['HTTP_HOST']?><?=$this->webroot?>articles/ratingsave/" + ratingval + "/" + articleid + "",
+			url: "//<?=$_SERVER['HTTP_HOST']?><?=$this->webroot?>articles/ratingsave/" + ratingval + "/" + articleid + "",
 			data: "",
 			success: function (msg) {
 				$.prompt('Votul a fost salvat cu succes.');
@@ -29,7 +29,7 @@
 
 	   $ArFld = substr(str_replace("-", "", $Article[0]['articles']['date']), 0, 6); // MONTHLY FOLDER PATH
 	   if (
-		   (strstr($Article[0]['articles']['image'], "jpg")) &&
+		   (strpos($Article[0]['articles']['image'], "jpg") !== false) &&
 		   (filesize(ROOT . "/app/webroot/img/upload/" . $ArFld . "/" . $Article[0]['articles']['image']) > 8000)
 	   ) {
 		  echo "
@@ -54,8 +54,10 @@
 		   <?php echo sprintf(__("Adaugat la %s", true), AppController::Db2StrDate($Article[0]['articles']['date'])); ?><br/>
             Telefon: <?php echo $Article[0]['articles']['phone'] . ''; ?><br/>
             Web:
-		   <?
-		   if (!strstr($Article[0]['articles']['webpage'], "http")) $Article[0]['articles']['webpage'] = "http://" . $Article[0]['articles']['webpage'];
+            <?php
+		   if (strpos($Article[0]['articles']['webpage'], "http") === false) {
+               $Article[0]['articles']['webpage'] = "//" . $Article[0]['articles']['webpage'];
+           }
 		   ?>
             <A style="font-size: 10px" HREF="<?php echo $Article[0]['articles']['webpage']; ?>" target="_blank">
 
@@ -75,32 +77,31 @@
             <br/>
 
         <div style="font-size: 10px; width: 75px; float: left; margin-top: 5px">
-		   <? if ($session->read("User.username")) { ?>
+            <?php if ($session->read("User.username")) { ?>
                <a href="javascript:void(0)" onclick="AddArticleToFav('<?= $Article[0]['articles']['id'] ?>')" class="tipnfo" title="Adauga la Favorite">
                    <img src="<?= $this->webroot ?>img/favorites.png" height=20 alt="">
                </a>
-		   <? } ?>
-            <a href="http://www.twitter.com/home?status=http://<?= $_SERVER["HTTP_HOST"] ?><?= $_SERVER["REQUEST_URI"] ?>" class="tipnfo" title="Adauga pe Twitter">
+            <?php } ?>
+            <a href="//www.twitter.com/home?status=//<?= $_SERVER["HTTP_HOST"] ?><?= $_SERVER["REQUEST_URI"] ?>" class="tipnfo" title="Adauga pe Twitter">
                 <img src="<?= $this->webroot ?>img/twitter.png" height=20  alt="">
             </a>
-            <a href="http://www.facebook.com/sharer.php?u=http://<?= $_SERVER["HTTP_HOST"] ?><?= $_SERVER["REQUEST_URI"] ?>&src=sp" class="tipnfo" title="Adauga pe Facebook">
+            <a href="//www.facebook.com/sharer.php?u=//<?= $_SERVER["HTTP_HOST"] ?><?= $_SERVER["REQUEST_URI"] ?>&src=sp" class="tipnfo" title="Adauga pe Facebook">
                 <img src="<?= $this->webroot ?>img/facebook.png" height=20  alt="">
             </a>
         </div>
         <div style="font-size: 10px; width: 215px; float: left">
-		   <? echo $this->renderElement('rating', array('rating' => $rating, 'votes' => $votes)); ?>
+            <?php echo $this->renderElement('rating', array('rating' => $rating, 'votes' => $votes)); ?>
         </div>
     </div>
     <div id="articleCnt"><BR>
-	   <? if ($Article[0]['articles']['title']) { ?>
+        <?php if ($Article[0]['articles']['title']) { ?>
            <p><?php echo ucwords(strtolower($Article[0]['articles']['title'])); ?></p>
-	   <? } ?>
+        <?php } ?>
 
 	   <?php echo ucfirst(trim($Article[0]['articles']['descr'])); ?><br/><br/><br/><br/>
 
-	   <? echo $this->renderElement('googlemain1'); ?>
+        <?php echo $this->renderElement('googlemain1'); ?>
     </div>
-
     <div style="clear:both"></div>
 </div>
 

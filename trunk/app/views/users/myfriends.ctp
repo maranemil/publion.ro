@@ -2,24 +2,17 @@
 // Creo il navigatore.
 #$html->addCrumb(__("Home", TRUE), "/");
 ?>
-
 <div class="contBoxMid">
-
     <p>
-	   <?php
-
-	   //print "<pre>"; print_r($Friends); die();
-
-	   foreach ($Friends as $Friend):
-
-		  if (filesize(ROOT . "/app/webroot/img/user/" . trim($Friend['User']['image'])) > 8000) {
-			 $imgHTML = "<img src='" . $this->webroot . "img/user/" . trim($Friend['User']['image']) . "' width=55  height=55>";
-		  }
-		  else {
-			 $imgHTML = "<img src='" . $this->webroot . "img/user/usericon.jpg' width=55  height=55>";
-		  }
-
-		  echo "
+        <?php
+        //print "<pre>"; print_r($Friends); die();
+        foreach ($Friends as $Friend):
+            if (filesize(ROOT . "/app/webroot/img/user/" . trim($Friend['User']['image'])) > 8000) {
+                $imgHTML = "<img src='" . $this->webroot . "img/user/" . trim($Friend['User']['image']) . "' width=55  height=55>";
+            } else {
+                $imgHTML = "<img src='" . $this->webroot . "img/user/usericon.jpg' width=55  height=55>";
+            }
+            echo "
 		<div class='myentriesFriens'>
 			<div style=''>
 				" . $imgHTML . "
@@ -37,10 +30,10 @@
 			<div style='clear: both'></div>
 		</div>
 		";
-	   endforeach;
-	   ?>
+        endforeach;
+        ?>
     </p>
 
     <div style='clear: both'></div>
 </div>
-<? #echo $this->renderElement('pagination', $paging);?> 
+<?php #echo $this->renderElement('pagination', $paging);?>

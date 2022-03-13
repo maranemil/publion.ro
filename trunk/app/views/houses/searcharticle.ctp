@@ -5,15 +5,15 @@
 
 <?php
 if (isset($arTmpArt)) {
-   foreach ($arTmpArt as $sTmpArt):
-	  echo $this->renderElement("house", $sTmpArt);
-   endforeach;
-   echo $this->renderElement('pagination', $paging);
+    foreach ($arTmpArt as $sTmpArt):
+        echo $this->renderElement("house", $sTmpArt);
+    endforeach;
+    echo $this->renderElement('pagination', $paging);
 }
 ?>
 
-<?
+<?php
 if (!empty($message)) {
-   echo "<div class='noresults'>" . $message . "</div>";
+    echo "<div class='noresults'>" . $message . "</div>";
 }
 ?> 

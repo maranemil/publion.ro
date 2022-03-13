@@ -4,7 +4,7 @@
 
 	   $ArFld = substr(str_replace("-", "", $Car[0]['cars']['date']), 0, 6); // MONTHLY FOLDER PATH
 	   //if(($Car['image']!=NULL)&&(file_exists($this->webroot."img/upload2/".$ArFld."/".trim($Car['image'])))){
-	   if ($Car[0]['cars']['image'] != null) {
+	   if ($Car[0]['cars']['image'] !== null) {
 		  echo "<a href='" . $this->webroot . "cars/view/" . $Car[0]['cars']['id'] . "/" . str_replace(array(',', ' ', '-', '.', '/', ':', '?', ';', '(', ')'), '_', strip_tags(substr($Car[0]['cars']['info'], 0, 70))) . ".htm'>";
 
 		  echo "<img src='" . $this->webroot . "img/upload2/" . $ArFld . "/" . trim($Car[0]['cars']['image']) . "' width=200></a>";
@@ -37,10 +37,10 @@
     <div id="articleCnt" style="">
         <br/>
 	   <?php echo ucwords(substr($Car[0]['cars']['info'], 0, 200)); ?><br/><br/>
-	   <? // echo trim(ucwords(substr($Article['descr'],0,200))); ?>
+        <?php // echo trim(ucwords(substr($Article['descr'],0,200))); ?>
         <hr/>
 
-	   <?
+        <?php
 	   $judArTmp = $this->requestAction("houses/getjudetnamebyid/" . $Car[0]['cars']['state']);
 	   $judName  = $judArTmp[0]["Judet"]["judet"];
 	   ?>
@@ -57,11 +57,11 @@
         Persoana: <?php echo trim($Car[0]['cars']['person']); ?><br/>
         Judet: <?php echo trim($judName); ?><br/>
         Telefon: <?php echo trim($Car[0]['cars']['phone']); ?><br/>
-        Web: <a href="http://<?php echo trim($Car[0]['cars']['web']); ?>" target="_new"><?php echo trim($Car[0]['cars']['web']); ?></a><br/><br/>
+        Web: <a href="//<?php echo trim($Car[0]['cars']['web']); ?>" target="_new"><?php echo trim($Car[0]['cars']['web']); ?></a><br/><br/>
 
     </div>
     <div style="clear:both"></div>
-   <? echo $this->renderElement('googlemain1'); ?>
+    <?php echo $this->renderElement('googlemain1'); ?>
 
     <div style="clear:both"></div>
 </div>

@@ -1,40 +1,39 @@
-<? //print_r($Car)?>
+<?php //print_r($Car)?>
 
 <div id="contentBox" style="">
     <div id="articleImg" style="  float: left; ">
-	   <?php
+        <?php
 
-	   $ArFld = substr(str_replace("-", "", $Car['date']), 0, 6); // MONTHLY FOLDER PATH
-	   //if(($Car['image']!=NULL)&&(file_exists($this->webroot."img/upload2/".$ArFld."/".trim($Car['image'])))){
-	   if ($Car['image'] != null) {
-		  echo "<a href='" . $this->webroot . "cars/view/" . $Car['id'] . "'>";
-		  echo "<img src='" . $this->webroot . "img/upload2/" . $ArFld . "/" . trim($Car['image']) . "'></a>";
-	   }
-	   else {
-		  echo "<a href='" . $this->webroot . "cars/view/" . $Car['id'] . "'>";
-		  echo "<img src='" . $this->webroot . "img/upload2/noimg.jpg'></a>";
-		  //echo "<a href='".$this->webroot."articles/view/".$Article['id']."/'><img src='".$this->webrootROOT."img/upload/noimg.jpg'></a>";
-	   }
-	   ?>
+        $ArFld = substr(str_replace("-", "", $Car['date']), 0, 6); // MONTHLY FOLDER PATH
+        //if(($Car['image']!=NULL)&&(file_exists($this->webroot."img/upload2/".$ArFld."/".trim($Car['image'])))){
+        echo "<a href='" . $this->webroot . "cars/view/" . $Car['id'] . "'>";
+        if ($Car['image'] !== null) {
+            echo "<img src='" . $this->webroot . "img/upload2/" . $ArFld . "/" . trim($Car['image']) . "'></a>";
+        } else {
+            echo "<img src='" . $this->webroot . "img/upload2/noimg.jpg'></a>";
+            //echo "<a href='".$this->webroot."articles/view/".$Article['id']."/'><img src='".$this->webrootROOT."img/upload/noimg.jpg'></a>";
+        }
+        ?>
 
     </div>
     <div id="articleTitle" style=" width:410px; float: left; ">
         <div style="float: left; height: 160px; width:200px; font: normal 10px arial">
             <span>
-			   <? echo "<a style='font: normal 13px arial' href='" . $this->webroot . "cars/view/" . $Car['id'] . "'>"; ?>
-			   <?php echo Sanitize::html($Car['type']); ?> /
+			   <?php echo "<a style='font: normal 13px arial' href='" . $this->webroot . "cars/view/" . $Car['id'] . "'>"; ?>
+               <?php echo Sanitize::html($Car['type']); ?> /
 			   <?php echo Sanitize::html($Car['price']); ?> <br>
 			   <?php echo Sanitize::html($Car['years']); ?>
-			   <? echo "</a>"; ?>
+               <?php echo "</a>"; ?>
             </span>
             <br/>
 
             Cod Anunt:
 
-		   <?php
-		   // ".str_replace(array(',',' ','-','.','/',':','?',';','(',')') ,'_',strip_tags(substr($Car['info'],0,70))).".htm
-		   echo $html->link('a' . $Car['id'], "/cars/view/" . $Car['id'] . "");
-		   ?> <br/>
+            <?php
+            // ".str_replace(array(',',' ','-','.','/',':','?',';','(',')') ,'_',strip_tags(substr($Car['info'],0,70))).".htm
+            echo $html->link('a' . $Car['id'], "/cars/view/" . $Car['id']);
+            ?>
+            <br/>
 
             <p>
                 Adaugat <?php echo sprintf(__("la %s", true), AppController::Db2StrDate($Car['date'])); ?><br/>
@@ -43,7 +42,7 @@
             </p>
         </div>
         <div style="float: left; height: 160px; width:200px; font: normal 16px calibri,arial">
-		   <?php echo ucwords(strtolower(substr($Car['info'], 0, 200))); ?> ...<br/><br/>
+            <?php echo ucwords(strtolower(substr($Car['info'], 0, 200))); ?> ...<br/><br/>
         </div>
         <div style="clear:both"></div>
     </div>

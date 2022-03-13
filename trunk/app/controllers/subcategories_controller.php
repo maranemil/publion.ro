@@ -1,4 +1,7 @@
-<?php
+<?php /** @noinspection PhpMultipleClassDeclarationsInspection */
+/** @noinspection AutoloadingIssuesInspection */
+/** @noinspection PhpUnused */
+
 /**
  * Controller Companies
  * @author         Maran Emil | Maran Project | maran_emil@yahoo.com
@@ -8,44 +11,47 @@
  * @license        http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 
-class SubcategoriesController extends AppController {
-   /**
-	* No....
-	* @var string
-	*/
+class SubcategoriesController extends AppController
+{
+    /**
+     * No....
+     * @var string
+     */
 
-   var $name = "Subcategory";
+    public $name = "Subcategory";
 
-   /**
-	* Helpers
-	* @var array
-	*/
+    /**
+     * Helpers
+     * @var array
+     */
 
-   var $uses    = array('Category', 'User', 'Subcategory');
-   var $helpers = array('Html', 'Javascript', 'Session', 'Head', 'Javascript', 'Ajax', 'Form');
+    public $uses    = array('Category', 'User', 'Subcategory');
+    public $helpers = array('Html', 'Javascript', 'Session', 'Head', 'Javascript', 'Ajax', 'Form');
 
-   public function index() {
-   }
+    public function index()
+    {
+    }
 
-   public function getcategories($limit = 35) {
-	  /*
-	  return 	$this->Category->find('all', array('order' => 'Category.id ASC', 'limit' => $limit));
-	  */
-   }
+    public function getcategories($limit = 35)
+    {
+        /*
+        return 	$this->Category->find('all', array('order' => 'Category.id ASC', 'limit' => $limit));
+        */
+    }
 
-   /*
-	   public function list_latest($limit = 5)
-	   {
-		   if ( isset($this->params['requested']) AND $this->params['requested'] )
-		   {
-			   return 	$this->Company->find('all', array('order' => 'Company.id DESC', 'limit' => $limit));
-			   }
-		   else
-		   {
-			   return FALSE;
-		   }
-	   }
-   */
+    /*
+        public function list_latest($limit = 5)
+        {
+            if ( isset($this->params['requested']) AND $this->params['requested'] )
+            {
+                return 	$this->Company->find('all', array('order' => 'Company.id DESC', 'limit' => $limit));
+                }
+            else
+            {
+                return FALSE;
+            }
+        }
+    */
 
 }
 
